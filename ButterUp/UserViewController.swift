@@ -18,6 +18,7 @@ class UserViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadList:", name:"load", object: nil)
         // Do any additional setup after loading the view, typically from a nib.
         self.navigationController?.navigationBarHidden = true
         let user = buser.getUser()
@@ -27,6 +28,17 @@ class UserViewController: UITableViewController {
         avatarID = [String] (avatars.keys)
     }
     
+    func loadList(notification: NSNotification) {
+        print("load is called")
+        let user = buser.getUser()
+        for (key,value) in user["avatars"] {
+            avatars[key] = value
+        }
+        avatarID = [String] (avatars.keys)
+        self.tableView.reloadData()
+    }
+    
+  
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -69,7 +81,8 @@ class UserViewController: UITableViewController {
     }
     
     func edit(sender: AnyObject) {
-        print("deleting")
+        print("editing")
+        performSegueWithIdentifier("editAvatar", sender: sender)
     }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) ->   UITableViewCell {
         let cell = UITableViewCell()

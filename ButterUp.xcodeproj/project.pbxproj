@@ -12,6 +12,7 @@
 		650A95611BE48A5B000556BD /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650A95601BE48A5B000556BD /* MessageViewController.swift */; };
 		650A95631BE48AE8000556BD /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650A95621BE48AE8000556BD /* ChatCell.swift */; };
 		6514BEE81BE9AC5F00EE4696 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6514BEE71BE9AC5F00EE4696 /* SettingsViewController.swift */; };
+		65362E9B1BEA934E0035A476 /* editAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65362E9A1BEA934E0035A476 /* editAvatar.swift */; };
 		655F3D361BE3DA150031D9C7 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655F3D321BE3DA150031D9C7 /* Message.swift */; };
 		655F3D371BE3DA150031D9C7 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655F3D331BE3DA150031D9C7 /* Room.swift */; };
 		655F3D381BE3DA150031D9C7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655F3D341BE3DA150031D9C7 /* User.swift */; };
@@ -24,6 +25,7 @@
 		659ABFC51BE88FEF00F4FCA8 /* chatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659ABFC41BE88FEF00F4FCA8 /* chatController.swift */; };
 		659ABFC71BE8966200F4FCA8 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659ABFC61BE8966200F4FCA8 /* Match.swift */; };
 		659ABFC91BE899C900F4FCA8 /* config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659ABFC81BE899C900F4FCA8 /* config.swift */; };
+		65D087781BEA818000CDEF1C /* MessageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D087771BEA818000CDEF1C /* MessageRequest.swift */; };
 		65DB4F881BE749B10079BD93 /* LobbyTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DB4F871BE749B10079BD93 /* LobbyTableController.swift */; };
 		65DB4F8A1BE7DF0D0079BD93 /* AvatarRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DB4F891BE7DF0D0079BD93 /* AvatarRequests.swift */; };
 		65E13C781BE29CD2004C4C75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E13C771BE29CD2004C4C75 /* AppDelegate.swift */; };
@@ -51,6 +53,7 @@
 		650A95621BE48AE8000556BD /* ChatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
 		650A95661BE4B40B000556BD /* importLibs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = importLibs.h; sourceTree = "<group>"; };
 		6514BEE71BE9AC5F00EE4696 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		65362E9A1BEA934E0035A476 /* editAvatar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = editAvatar.swift; sourceTree = "<group>"; };
 		653FEAC61BE869B10002814B /* ButterUp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ButterUp-Bridging-Header.h"; sourceTree = "<group>"; };
 		655F3D321BE3DA150031D9C7 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		655F3D331BE3DA150031D9C7 /* Room.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
@@ -66,6 +69,7 @@
 		659ABFC81BE899C900F4FCA8 /* config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = config.swift; sourceTree = "<group>"; };
 		65C74BAC1BE43F7D0073C4BA /* ButterUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ButterUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65C74BAD1BE43F7D0073C4BA /* ButterUpTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ButterUpTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		65D087771BEA818000CDEF1C /* MessageRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageRequest.swift; sourceTree = "<group>"; };
 		65DB4F871BE749B10079BD93 /* LobbyTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LobbyTableController.swift; sourceTree = "<group>"; };
 		65DB4F891BE7DF0D0079BD93 /* AvatarRequests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarRequests.swift; sourceTree = "<group>"; };
 		65E13C761BE29CD2004C4C75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -104,6 +108,7 @@
 				655F3D391BE3DA310031D9C7 /* AuthRequests.swift */,
 				655F3D331BE3DA150031D9C7 /* Room.swift */,
 				655F3D321BE3DA150031D9C7 /* Message.swift */,
+				65D087771BEA818000CDEF1C /* MessageRequest.swift */,
 				655F3D341BE3DA150031D9C7 /* User.swift */,
 				655F3D3A1BE3DA310031D9C7 /* Avatar.swift */,
 				650A3E381BE867870049C7D2 /* UserRequests.swift */,
@@ -125,6 +130,7 @@
 				655F3D3D1BE3F31D0031D9C7 /* LoginViewController.swift */,
 				65DB4F871BE749B10079BD93 /* LobbyTableController.swift */,
 				659ABFC41BE88FEF00F4FCA8 /* chatController.swift */,
+				65362E9A1BEA934E0035A476 /* editAvatar.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -344,6 +350,7 @@
 				655F3D421BE425A30031D9C7 /* AvatarViewController.swift in Sources */,
 				655F3D3B1BE3DA310031D9C7 /* AuthRequests.swift in Sources */,
 				650A95631BE48AE8000556BD /* ChatCell.swift in Sources */,
+				65D087781BEA818000CDEF1C /* MessageRequest.swift in Sources */,
 				65E13C781BE29CD2004C4C75 /* AppDelegate.swift in Sources */,
 				650A3E391BE867870049C7D2 /* UserRequests.swift in Sources */,
 				650A95611BE48A5B000556BD /* MessageViewController.swift in Sources */,
@@ -356,6 +363,7 @@
 				659ABFC91BE899C900F4FCA8 /* config.swift in Sources */,
 				655F3D441BE428AA0031D9C7 /* AvatarDisplayView.swift in Sources */,
 				655F3D371BE3DA150031D9C7 /* Room.swift in Sources */,
+				65362E9B1BEA934E0035A476 /* editAvatar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

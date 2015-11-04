@@ -57,4 +57,24 @@ class AvatarRequests {
 //        reuqest to profile/login to get avatars back?
 //        Alamofire.request(.GET, "http://localhost:3000/avatars")
     }
-}
+    
+    
+    func putAvatar(avatarID: String, data: String, avatarName:String, AboutMe: String) {
+        
+        let params = [
+            "image": data,
+            "avatarName": avatarName,
+            "aboutMe": AboutMe
+        ]
+        
+        let URL =  url + "/avatars/" + avatarID
+        let headers = ["Authorization": "bearer \(token)"]
+        
+        Alamofire.request(.PUT, URL, headers: headers, encoding: .JSON)
+
+
+    }
+    
+ }
+
+

@@ -1,42 +1,44 @@
 //
-//  AvatarDisplayView.swift
+//  editAvatar.swift
 //  ButterUp
 //
-//  Created by Horst Schmalfuß on 30.10.15.
+//  Created by Horst Schmalfuß on 04.11.15.
 //  Copyright © 2015 ButterUp inc. All rights reserved.
 //
 
 import UIKit
 import SwiftyJSON
 
-class AvatarDisplayView: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class editAvatar: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    
+    @IBOutlet weak var editAvatar: UIButton!
+    @IBOutlet weak var changeImage: UIButton!
+    @IBOutlet weak var editedImage: UIImageView!
+    @IBOutlet weak var username: UITextField!
 
     @IBOutlet weak var aboutMe: UITextField!
-    @IBOutlet weak var avatarName: UITextField!
-    @IBOutlet weak var addAvatar: UIButton!
-    @IBOutlet weak var button: UIButton!
-    @IBOutlet weak var addImage: UIButton!
-    @IBOutlet weak var imageView: UIImageView!
     
-    var buser = User()
-    var avatarPost = AvatarRequests()
-    
-    var avatar: String = ""
-    var avatarAboutMe: String = ""
     var base64String: String = ""
-
+//    get this through segue
+    var currentAvatarID: String = ""
+    
+    var avatarHandler =  AvatarRequests()
+    var buser = User()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("calling edit controller")
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
-    @IBAction func submit(sender: AnyObject) {
-        print("submit")
-    }
-    @IBAction func addImage(sender: AnyObject) {
+    
+    
+    @IBAction func changeImage(sender: AnyObject) {
+        
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary){
             print("Button capture")
             let imag = UIImagePickerController()
@@ -45,10 +47,14 @@ class AvatarDisplayView: UIViewController, UINavigationControllerDelegate, UIIma
             //imag.mediaTypes = [kUTTypeImage];
             imag.allowsEditing = false
             self.presentViewController(imag, animated: true, completion: nil)
-//        }
         }
-    }
 
+        
+        
+    }
+    
+    
+    
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: AnyObject]) {
         
         var image: UIImage!
@@ -59,46 +65,63 @@ class AvatarDisplayView: UIViewController, UINavigationControllerDelegate, UIIma
         } else {
             image = info[UIImagePickerControllerOriginalImage] as! UIImage
         }
-       
+        
+        self.editedImage.image = image
+        
         
         func convertImageToBase64(image: UIImage) -> String {
             let imageData = UIImageJPEGRepresentation(image, 0.0)!
             let base64String = imageData.base64EncodedStringWithOptions([])
             return base64String
         }
-        self.imageView.image = image
-
-        self.base64String = convertImageToBase64(self.imageView.image!)
+        
+        self.base64String = convertImageToBase64(self.editedImage.image!)
+        
+        
         self.dismissViewControllerAnimated(true, completion: nil)
+
     }
     
-    @IBAction func postAvatar(sender: AnyObject) {
-        self.avatar = avatarName.text!
-        self.avatarAboutMe = aboutMe.text!
-        avatarPost.postAvatar(self.base64String, avatarName: self.avatar, avatarAboutMe: self.avatarAboutMe, callback: addAvatar)
-    }
     
-    @IBAction func returnToProfileView(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: {});
-    }
+   
+
     
-    func addAvatar(avatar:[String:JSON]) {
-//        get avatarID
-        let curravatarID = [String] (avatar.keys)[0]
+
+    @IBAction func editAvatar(sender: AnyObject) {
+        print("hello clicked")
+//        put request to avatars
+        let image = self.base64String
+        let avatarName = self.username.text
+        let aboutMe = self.aboutMe.text
+        
         var user = buser.getUser()
-//        set user avatar object to new avatar JSON object
-        user["avatars"][curravatarID] = avatar[curravatarID]!
-//        save to localstorage
+        //        set user avatar object to new avatar JSON object
+//        getting id from segue for this 3
+        var avatar = [String:String]()
+//        build avatar with current values
+        
+        avatar["aboutMe"] = self.aboutMe.text
+        avatar["avatarName"] = self.username.text
+        avatar["image"] = self.base64String
+//        this time not getting back anything from the server -> jsonify it??
+        user["avatars"]["3"] = avatar
+        print("editing avatar", avatar)
+        //save to localstorage
         let str = user.rawString(NSUTF8StringEncoding)
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.setValue(str, forKey: "user")
         defaults.synchronize()
+        
+       
         NSNotificationCenter.defaultCenter().postNotificationName("load", object: nil)
         self.dismissViewControllerAnimated(true, completion: {});
-    }
-   
-    
-    
-//    submit button where all data gets sent to the server -> when making get request while on profile page ->getting the data back
-}
 
+        
+      
+//        data name aboutMe
+        let id = String(4)
+        
+        avatarHandler.putAvatar(id, data:image, avatarName:avatarName!, AboutMe:aboutMe!)
+    }
+    
+}

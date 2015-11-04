@@ -127,7 +127,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eeH-td-flz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-248" y="-2836"/>
+            <point key="canvasLocation" x="-420" y="-3210"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="sxX-g3-We5">
@@ -152,7 +152,7 @@
             </objects>
             <point key="canvasLocation" x="-1249" y="-779"/>
         </scene>
-        <!--Item-->
+        <!--Lobby-->
         <scene sceneID="dy3-pI-B4d">
             <objects>
                 <tableViewController id="QuF-UT-gHh" customClass="LobbyTableController" customModule="ButterUp" customModuleProvider="target" sceneMemberID="viewController">
@@ -175,7 +175,7 @@
                             <outlet property="delegate" destination="QuF-UT-gHh" id="Rus-HJ-jKP"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="orU-C9-anK"/>
+                    <tabBarItem key="tabBarItem" title="Lobby" id="orU-C9-anK"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cr0-Mz-K47" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -185,19 +185,19 @@
         <!--Profile-->
         <scene sceneID="m3F-Ng-Em6">
             <objects>
-                <tableViewController id="pUr-Iy-9dt" customClass="UserViewController" customModule="ButterUp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController clearsSelectionOnViewWillAppear="NO" id="pUr-Iy-9dt" customClass="UserViewController" customModule="ButterUp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="83" sectionHeaderHeight="28" sectionFooterHeight="28" id="hd4-XR-Tdu">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="ZXp-Nv-XSB">
-                            <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <items>
                                 <navigationItem id="jpV-Ny-R1l">
                                     <barButtonItem key="leftBarButtonItem" title="Add Avatar" id="zEF-rw-MnF">
                                         <connections>
-                                            <segue destination="8R3-Ko-uuG" kind="show" id="J7T-Hp-YNx"/>
+                                            <segue destination="8R3-Ko-uuG" kind="show" identifier="addAvatarSegue" id="J7T-Hp-YNx"/>
                                         </connections>
                                     </barButtonItem>
                                 </navigationItem>
@@ -205,7 +205,7 @@
                         </navigationBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="83" id="q8l-AC-vvf">
-                                <rect key="frame" x="0.0" y="136" width="320" height="83"/>
+                                <rect key="frame" x="0.0" y="72" width="320" height="83"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="q8l-AC-vvf" id="e5e-19-n5a">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="82.5"/>
@@ -218,8 +218,11 @@
                             <outlet property="delegate" destination="pUr-Iy-9dt" id="v4J-rD-T7y"/>
                         </connections>
                     </tableView>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" title="Profile" id="HqB-Np-R0C"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <segue destination="duc-YW-snE" kind="show" identifier="editAvatar" id="1Vz-J6-FFu"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ef0-xE-NJe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -235,12 +238,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="cbG-4c-XIP" kind="relationship" relationship="rootViewController" id="KMO-oN-NBX"/>
+                        <segue destination="cbG-4c-XIP" kind="relationship" relationship="rootViewController" id="fEU-8O-DFy"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x1V-f5-A3i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-242" y="-1928"/>
+            <point key="canvasLocation" x="-362" y="-1934"/>
         </scene>
         <!--Add Avatar-->
         <scene sceneID="zp4-RG-2XC">
@@ -288,22 +291,23 @@
                                     <action selector="addImage:" destination="cbG-4c-XIP" eventType="touchUpInside" id="xla-pG-Jk4"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lnc-nV-O8z">
-                                <rect key="frame" x="97" y="448" width="75" height="30"/>
-                                <state key="normal" title="Add Avatar">
-                                    <color key="titleColor" red="0.59232089964466139" green="0.96299575053741604" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="postAvatar:" destination="cbG-4c-XIP" eventType="touchUpInside" id="Zga-4w-Uxe"/>
-                                    <action selector="submit:" destination="cbG-4c-XIP" eventType="touchUpInside" id="PQP-SH-7Er"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add a new Avatar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FUK-2C-jv4">
                                 <rect key="frame" x="78" y="28" width="133" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.59232089960000001" green="0.96299575049999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="highlightedColor" red="1" green="0.92617270742026092" blue="0.52247365700747161" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lnc-nV-O8z">
+                                <rect key="frame" x="96" y="450" width="75" height="30"/>
+                                <state key="normal" title="Add Avatar">
+                                    <color key="titleColor" red="0.59232089964466139" green="0.96299575053741604" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="goBack" destination="T3J-vp-ABG" eventType="touchUpInside" id="8Ps-IE-twe"/>
+                                    <action selector="postAvatar:" destination="cbG-4c-XIP" eventType="touchUpInside" id="Zga-4w-Uxe"/>
+                                    <action selector="submit:" destination="cbG-4c-XIP" eventType="touchUpInside" id="PQP-SH-7Er"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -311,7 +315,7 @@
                         <barButtonItem key="backBarButtonItem" title="Profile" id="gaC-Qd-1iS"/>
                         <barButtonItem key="leftBarButtonItem" title="Back" id="Wuq-gX-6dx">
                             <connections>
-                                <segue destination="pUr-Iy-9dt" kind="show" identifier="addAvatar" id="Hqt-F3-i9c"/>
+                                <action selector="returnToProfileView:" destination="cbG-4c-XIP" id="Qdr-k4-qHa"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -326,7 +330,79 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T3J-vp-ABG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="682" y="-1951"/>
+            <point key="canvasLocation" x="120" y="-1934"/>
+        </scene>
+        <!--Edit Avatar-->
+        <scene sceneID="ROH-Am-5KR">
+            <objects>
+                <viewController id="duc-YW-snE" customClass="editAvatar" customModule="ButterUp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lBw-Ta-ycu"/>
+                        <viewControllerLayoutGuide type="bottom" id="hov-Yj-LDh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4q2-jg-d2Q">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CuZ-bl-Unb">
+                                <rect key="frame" x="55" y="38" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YqG-Ym-fOd">
+                                <rect key="frame" x="240" y="407" width="74" height="30"/>
+                                <state key="normal" title="Edit Avatar">
+                                    <color key="titleColor" red="0.55749748313919056" green="1" blue="0.98405454486302346" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="editAvatar:" destination="duc-YW-snE" eventType="touchUpInside" id="aUa-j5-v5S"/>
+                                    <segue destination="IdH-Hj-65r" kind="show" id="bN9-xD-xBS"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="baZ-Sl-eEy">
+                                <rect key="frame" x="30" y="227" width="240" height="128"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMn-TA-nFm">
+                                <rect key="frame" x="178" y="42" width="79" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="About Me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W61-CV-iaI">
+                                <rect key="frame" x="182" y="162" width="75" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s7J-oW-zh5">
+                                <rect key="frame" x="55" y="407" width="99" height="30"/>
+                                <state key="normal" title="Change Image">
+                                    <color key="titleColor" red="0.76959559959229651" green="1" blue="0.96959054145151002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="changeImage:" destination="duc-YW-snE" eventType="touchUpInside" id="IHw-PG-wjH"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S4R-9S-Pvu">
+                                <rect key="frame" x="57" y="158" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="aboutMe" destination="S4R-9S-Pvu" id="GZS-tc-LIt"/>
+                        <outlet property="changeImage" destination="s7J-oW-zh5" id="Mj6-aZ-Jhf"/>
+                        <outlet property="editAvatar" destination="YqG-Ym-fOd" id="PF9-iJ-WNB"/>
+                        <outlet property="editedImage" destination="baZ-Sl-eEy" id="v2e-Mu-DmU"/>
+                        <outlet property="username" destination="CuZ-bl-Unb" id="ICd-5J-CxX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="19t-HM-j70" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-342" y="-1024"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="k7I-N9-VH8">
@@ -562,9 +638,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="tZT-5V-dUY"/>
+        <segue reference="bN9-xD-xBS"/>
         <segue reference="ed0-aU-xEY"/>
-        <segue reference="Hqt-F3-i9c"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>
