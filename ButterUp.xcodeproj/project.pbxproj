@@ -7,12 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1966152E79DAD504DA71CFFF /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D3E4EB023FC2194775B6735 /* Pods.framework */; };
+		650A3E391BE867870049C7D2 /* UserRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650A3E381BE867870049C7D2 /* UserRequests.swift */; };
+		650A95611BE48A5B000556BD /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650A95601BE48A5B000556BD /* MessageViewController.swift */; };
+		650A95631BE48AE8000556BD /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650A95621BE48AE8000556BD /* ChatCell.swift */; };
+		6514BEE81BE9AC5F00EE4696 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6514BEE71BE9AC5F00EE4696 /* SettingsViewController.swift */; };
+		655F3D361BE3DA150031D9C7 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655F3D321BE3DA150031D9C7 /* Message.swift */; };
+		655F3D371BE3DA150031D9C7 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655F3D331BE3DA150031D9C7 /* Room.swift */; };
+		655F3D381BE3DA150031D9C7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655F3D341BE3DA150031D9C7 /* User.swift */; };
+		655F3D3B1BE3DA310031D9C7 /* AuthRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655F3D391BE3DA310031D9C7 /* AuthRequests.swift */; };
+		655F3D3C1BE3DA310031D9C7 /* Avatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655F3D3A1BE3DA310031D9C7 /* Avatar.swift */; };
+		655F3D3E1BE3F31D0031D9C7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655F3D3D1BE3F31D0031D9C7 /* LoginViewController.swift */; };
+		655F3D401BE420990031D9C7 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655F3D3F1BE420990031D9C7 /* UserViewController.swift */; };
+		655F3D421BE425A30031D9C7 /* AvatarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655F3D411BE425A30031D9C7 /* AvatarViewController.swift */; };
+		655F3D441BE428AA0031D9C7 /* AvatarDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655F3D431BE428AA0031D9C7 /* AvatarDisplayView.swift */; };
+		659ABFC51BE88FEF00F4FCA8 /* chatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659ABFC41BE88FEF00F4FCA8 /* chatController.swift */; };
+		659ABFC71BE8966200F4FCA8 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659ABFC61BE8966200F4FCA8 /* Match.swift */; };
+		659ABFC91BE899C900F4FCA8 /* config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659ABFC81BE899C900F4FCA8 /* config.swift */; };
+		65DB4F861BE73FDA0079BD93 /* AddAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DB4F851BE73FDA0079BD93 /* AddAvatar.swift */; };
+		65DB4F881BE749B10079BD93 /* LobbyTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DB4F871BE749B10079BD93 /* LobbyTableController.swift */; };
+		65DB4F8A1BE7DF0D0079BD93 /* AvatarRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DB4F891BE7DF0D0079BD93 /* AvatarRequests.swift */; };
 		65E13C781BE29CD2004C4C75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E13C771BE29CD2004C4C75 /* AppDelegate.swift */; };
 		65E13C7A1BE29CD2004C4C75 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E13C791BE29CD2004C4C75 /* ViewController.swift */; };
 		65E13C7D1BE29CD2004C4C75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65E13C7B1BE29CD2004C4C75 /* Main.storyboard */; };
 		65E13C7F1BE29CD2004C4C75 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65E13C7E1BE29CD2004C4C75 /* Images.xcassets */; };
 		65E13C821BE29CD2004C4C75 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65E13C801BE29CD2004C4C75 /* LaunchScreen.xib */; };
-		65E13C8E1BE29CD2004C4C75 /* ButterUpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E13C8D1BE29CD2004C4C75 /* ButterUpTests.swift */; };
+		65EFC67D1BE82C7400C44AD9 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EFC67C1BE82C7400C44AD9 /* SignupViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,16 +46,39 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		65E13C721BE29CD2004C4C75 /* ButterUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ButterUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E786E4034DEF1A4D481FA9D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		650A3E381BE867870049C7D2 /* UserRequests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRequests.swift; sourceTree = "<group>"; };
+		650A95601BE48A5B000556BD /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		650A95621BE48AE8000556BD /* ChatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
+		650A95661BE4B40B000556BD /* importLibs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = importLibs.h; sourceTree = "<group>"; };
+		6514BEE71BE9AC5F00EE4696 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		653FEAC61BE869B10002814B /* ButterUp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ButterUp-Bridging-Header.h"; sourceTree = "<group>"; };
+		655F3D321BE3DA150031D9C7 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		655F3D331BE3DA150031D9C7 /* Room.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
+		655F3D341BE3DA150031D9C7 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		655F3D391BE3DA310031D9C7 /* AuthRequests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthRequests.swift; sourceTree = "<group>"; };
+		655F3D3A1BE3DA310031D9C7 /* Avatar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Avatar.swift; sourceTree = "<group>"; };
+		655F3D3D1BE3F31D0031D9C7 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		655F3D3F1BE420990031D9C7 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		655F3D411BE425A30031D9C7 /* AvatarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarViewController.swift; sourceTree = "<group>"; };
+		655F3D431BE428AA0031D9C7 /* AvatarDisplayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarDisplayView.swift; sourceTree = "<group>"; };
+		659ABFC41BE88FEF00F4FCA8 /* chatController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = chatController.swift; sourceTree = "<group>"; };
+		659ABFC61BE8966200F4FCA8 /* Match.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
+		659ABFC81BE899C900F4FCA8 /* config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = config.swift; sourceTree = "<group>"; };
+		65C74BAC1BE43F7D0073C4BA /* ButterUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ButterUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		65C74BAD1BE43F7D0073C4BA /* ButterUpTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ButterUpTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		65DB4F851BE73FDA0079BD93 /* AddAvatar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAvatar.swift; sourceTree = "<group>"; };
+		65DB4F871BE749B10079BD93 /* LobbyTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LobbyTableController.swift; sourceTree = "<group>"; };
+		65DB4F891BE7DF0D0079BD93 /* AvatarRequests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarRequests.swift; sourceTree = "<group>"; };
 		65E13C761BE29CD2004C4C75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65E13C771BE29CD2004C4C75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65E13C791BE29CD2004C4C75 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		65E13C7C1BE29CD2004C4C75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		65E13C7E1BE29CD2004C4C75 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		65E13C811BE29CD2004C4C75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		65E13C871BE29CD2004C4C75 /* ButterUpTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ButterUpTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		65E13C8C1BE29CD2004C4C75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		65E13C8D1BE29CD2004C4C75 /* ButterUpTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButterUpTests.swift; sourceTree = "<group>"; };
+		65EFC67C1BE82C7400C44AD9 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		9D3E4EB023FC2194775B6735 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFAEE5693E78FA81E67F1840 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1966152E79DAD504DA71CFFF /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,30 +100,61 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		650A95641BE49C77000556BD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				655F3D391BE3DA310031D9C7 /* AuthRequests.swift */,
+				655F3D331BE3DA150031D9C7 /* Room.swift */,
+				655F3D321BE3DA150031D9C7 /* Message.swift */,
+				655F3D341BE3DA150031D9C7 /* User.swift */,
+				655F3D3A1BE3DA310031D9C7 /* Avatar.swift */,
+				650A3E381BE867870049C7D2 /* UserRequests.swift */,
+				65DB4F891BE7DF0D0079BD93 /* AvatarRequests.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		650A95651BE49CEF000556BD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6514BEE71BE9AC5F00EE4696 /* SettingsViewController.swift */,
+				650A95601BE48A5B000556BD /* MessageViewController.swift */,
+				655F3D411BE425A30031D9C7 /* AvatarViewController.swift */,
+				65E13C791BE29CD2004C4C75 /* ViewController.swift */,
+				65EFC67C1BE82C7400C44AD9 /* SignupViewController.swift */,
+				655F3D3F1BE420990031D9C7 /* UserViewController.swift */,
+				655F3D431BE428AA0031D9C7 /* AvatarDisplayView.swift */,
+				655F3D3D1BE3F31D0031D9C7 /* LoginViewController.swift */,
+				65DB4F851BE73FDA0079BD93 /* AddAvatar.swift */,
+				65DB4F871BE749B10079BD93 /* LobbyTableController.swift */,
+				659ABFC41BE88FEF00F4FCA8 /* chatController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		65E13C691BE29CD2004C4C75 = {
 			isa = PBXGroup;
 			children = (
 				65E13C741BE29CD2004C4C75 /* ButterUp */,
-				65E13C8A1BE29CD2004C4C75 /* ButterUpTests */,
-				65E13C731BE29CD2004C4C75 /* Products */,
+				F13B9E3C8F4E72822D705F59 /* Pods */,
+				CC57295B9D36B73868DFC639 /* Frameworks */,
+				65C74BAC1BE43F7D0073C4BA /* ButterUp.app */,
+				65C74BAD1BE43F7D0073C4BA /* ButterUpTests.xctest */,
 			);
-			sourceTree = "<group>";
-		};
-		65E13C731BE29CD2004C4C75 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				65E13C721BE29CD2004C4C75 /* ButterUp.app */,
-				65E13C871BE29CD2004C4C75 /* ButterUpTests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		65E13C741BE29CD2004C4C75 /* ButterUp */ = {
 			isa = PBXGroup;
 			children = (
 				65E13C771BE29CD2004C4C75 /* AppDelegate.swift */,
-				65E13C791BE29CD2004C4C75 /* ViewController.swift */,
+				653FEAC61BE869B10002814B /* ButterUp-Bridging-Header.h */,
+				659ABFC81BE899C900F4FCA8 /* config.swift */,
+				650A95661BE4B40B000556BD /* importLibs.h */,
+				650A95651BE49CEF000556BD /* Controllers */,
+				650A95641BE49C77000556BD /* Models */,
 				65E13C7B1BE29CD2004C4C75 /* Main.storyboard */,
+				659ABFC61BE8966200F4FCA8 /* Match.swift */,
+				650A95621BE48AE8000556BD /* ChatCell.swift */,
 				65E13C7E1BE29CD2004C4C75 /* Images.xcassets */,
 				65E13C801BE29CD2004C4C75 /* LaunchScreen.xib */,
 				65E13C751BE29CD2004C4C75 /* Supporting Files */,
@@ -95,21 +170,21 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		65E13C8A1BE29CD2004C4C75 /* ButterUpTests */ = {
+		CC57295B9D36B73868DFC639 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				65E13C8D1BE29CD2004C4C75 /* ButterUpTests.swift */,
-				65E13C8B1BE29CD2004C4C75 /* Supporting Files */,
+				9D3E4EB023FC2194775B6735 /* Pods.framework */,
 			);
-			path = ButterUpTests;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		65E13C8B1BE29CD2004C4C75 /* Supporting Files */ = {
+		F13B9E3C8F4E72822D705F59 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				65E13C8C1BE29CD2004C4C75 /* Info.plist */,
+				1E786E4034DEF1A4D481FA9D /* Pods.debug.xcconfig */,
+				AFAEE5693E78FA81E67F1840 /* Pods.release.xcconfig */,
 			);
-			name = "Supporting Files";
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,9 +194,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 65E13C911BE29CD2004C4C75 /* Build configuration list for PBXNativeTarget "ButterUp" */;
 			buildPhases = (
+				E4134FC1709B794C6E20EA69 /* Check Pods Manifest.lock */,
 				65E13C6E1BE29CD2004C4C75 /* Sources */,
 				65E13C6F1BE29CD2004C4C75 /* Frameworks */,
 				65E13C701BE29CD2004C4C75 /* Resources */,
+				E6EDE6EBA3FE9D3E4FB3A68D /* Embed Pods Frameworks */,
+				EDBC72DB1C32F7FE78C9FA65 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -129,7 +207,7 @@
 			);
 			name = ButterUp;
 			productName = ButterUp;
-			productReference = 65E13C721BE29CD2004C4C75 /* ButterUp.app */;
+			productReference = 65C74BAC1BE43F7D0073C4BA /* ButterUp.app */;
 			productType = "com.apple.product-type.application";
 		};
 		65E13C861BE29CD2004C4C75 /* ButterUpTests */ = {
@@ -147,7 +225,7 @@
 			);
 			name = ButterUpTests;
 			productName = ButterUpTests;
-			productReference = 65E13C871BE29CD2004C4C75 /* ButterUpTests.xctest */;
+			productReference = 65C74BAD1BE43F7D0073C4BA /* ButterUpTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -156,7 +234,8 @@
 		65E13C6A1BE29CD2004C4C75 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "ButterUp inc.";
 				TargetAttributes = {
 					65E13C711BE29CD2004C4C75 = {
@@ -164,7 +243,6 @@
 					};
 					65E13C861BE29CD2004C4C75 = {
 						CreatedOnToolsVersion = 6.4;
-						TestTargetID = 65E13C711BE29CD2004C4C75;
 					};
 				};
 			};
@@ -177,7 +255,7 @@
 				Base,
 			);
 			mainGroup = 65E13C691BE29CD2004C4C75;
-			productRefGroup = 65E13C731BE29CD2004C4C75 /* Products */;
+			productRefGroup = 65E13C691BE29CD2004C4C75;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -207,13 +285,81 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		E4134FC1709B794C6E20EA69 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E6EDE6EBA3FE9D3E4FB3A68D /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EDBC72DB1C32F7FE78C9FA65 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		65E13C6E1BE29CD2004C4C75 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				655F3D3E1BE3F31D0031D9C7 /* LoginViewController.swift in Sources */,
 				65E13C7A1BE29CD2004C4C75 /* ViewController.swift in Sources */,
+				65DB4F861BE73FDA0079BD93 /* AddAvatar.swift in Sources */,
+				659ABFC71BE8966200F4FCA8 /* Match.swift in Sources */,
+				655F3D361BE3DA150031D9C7 /* Message.swift in Sources */,
+				655F3D381BE3DA150031D9C7 /* User.swift in Sources */,
+				65DB4F8A1BE7DF0D0079BD93 /* AvatarRequests.swift in Sources */,
+				655F3D421BE425A30031D9C7 /* AvatarViewController.swift in Sources */,
+				655F3D3B1BE3DA310031D9C7 /* AuthRequests.swift in Sources */,
+				650A95631BE48AE8000556BD /* ChatCell.swift in Sources */,
 				65E13C781BE29CD2004C4C75 /* AppDelegate.swift in Sources */,
+				650A3E391BE867870049C7D2 /* UserRequests.swift in Sources */,
+				650A95611BE48A5B000556BD /* MessageViewController.swift in Sources */,
+				6514BEE81BE9AC5F00EE4696 /* SettingsViewController.swift in Sources */,
+				659ABFC51BE88FEF00F4FCA8 /* chatController.swift in Sources */,
+				65EFC67D1BE82C7400C44AD9 /* SignupViewController.swift in Sources */,
+				655F3D3C1BE3DA310031D9C7 /* Avatar.swift in Sources */,
+				65DB4F881BE749B10079BD93 /* LobbyTableController.swift in Sources */,
+				655F3D401BE420990031D9C7 /* UserViewController.swift in Sources */,
+				659ABFC91BE899C900F4FCA8 /* config.swift in Sources */,
+				655F3D441BE428AA0031D9C7 /* AvatarDisplayView.swift in Sources */,
+				655F3D371BE3DA150031D9C7 /* Room.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,7 +367,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65E13C8E1BE29CD2004C4C75 /* ButterUpTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +421,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -291,7 +437,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -329,7 +475,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -338,28 +484,36 @@
 		};
 		65E13C921BE29CD2004C4C75 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E786E4034DEF1A4D481FA9D /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = ButterUp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "mycomp.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ButterUp/ButterUp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		65E13C931BE29CD2004C4C75 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AFAEE5693E78FA81E67F1840 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = ButterUp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "mycomp.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ButterUp/ButterUp-Bridging-Header.h";
 			};
 			name = Release;
 		};
 		65E13C951BE29CD2004C4C75 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -370,23 +524,22 @@
 				);
 				INFOPLIST_FILE = ButterUpTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "mycomp.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ButterUp.app/ButterUp";
 			};
 			name = Debug;
 		};
 		65E13C961BE29CD2004C4C75 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = ButterUpTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "mycomp.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ButterUp.app/ButterUp";
 			};
 			name = Release;
 		};
@@ -409,6 +562,7 @@
 				65E13C931BE29CD2004C4C75 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		65E13C941BE29CD2004C4C75 /* Build configuration list for PBXNativeTarget "ButterUpTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +571,7 @@
 				65E13C961BE29CD2004C4C75 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
