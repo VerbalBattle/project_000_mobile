@@ -113,7 +113,7 @@ class UserViewController: UITableViewController {
             aboutMe.text = lab["aboutMe"].string
             if let imageSrc = lab["imageSource"].string {
                 var imageBinary = ""
-                if(imageSrc == "data:," || imageSrc == "data:image/png;base64," ) {
+                if(imageSrc == "data:," || imageSrc == "data:image/png;base64," || imageSrc == "") {
                     imageBinary = "R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
 
                 } else {

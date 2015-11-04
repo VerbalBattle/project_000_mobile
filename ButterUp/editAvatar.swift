@@ -82,11 +82,6 @@ class editAvatar: UIViewController, UINavigationControllerDelegate, UIImagePicke
 
     }
     
-    
-   
-
-    
-
     @IBAction func editAvatar(sender: AnyObject) {
         print("hello clicked")
 //        put request to avatars
@@ -97,17 +92,17 @@ class editAvatar: UIViewController, UINavigationControllerDelegate, UIImagePicke
         var user = buser.getUser()
         //        set user avatar object to new avatar JSON object
 //        getting id from segue for this 3
-        var avatar = [String:String]()
+
 //        build avatar with current values
         
-        avatar["aboutMe"] = self.aboutMe.text
-        avatar["avatarName"] = self.username.text
-        avatar["image"] = self.base64String
-//        this time not getting back anything from the server -> jsonify it??
-        user["avatars"]["3"] = avatar
-        print("editing avatar", avatar)
+        user["avatars"]["35"]["aboutMe"] = JSON(self.aboutMe.text!)
+        user["avatars"]["35"]["avatarName"] = JSON(self.username.text!)
+        user["avatars"]["35"]["imageSource"] = JSON(self.base64String)
+////        this time not getting back anything from the server -> jsonify it??
+//        user["avatars"]["3"] = avatar
         //save to localstorage
         let str = user.rawString(NSUTF8StringEncoding)
+        print(str)
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.setValue(str, forKey: "user")
         defaults.synchronize()
@@ -119,7 +114,7 @@ class editAvatar: UIViewController, UINavigationControllerDelegate, UIImagePicke
         
       
 //        data name aboutMe
-        let id = String(4)
+        let id = String(35)
         
         avatarHandler.putAvatar(id, data:image, avatarName:avatarName!, AboutMe:aboutMe!)
     }
