@@ -29,7 +29,6 @@ class SignupViewController: UIViewController {
     func addToken(authenticated: Bool, token: String) {
         print(authenticated)
         if (authenticated) {
-            print("signed up" + token)
             
             let defaults = NSUserDefaults.standardUserDefaults()
             

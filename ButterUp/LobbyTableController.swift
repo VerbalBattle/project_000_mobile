@@ -54,7 +54,6 @@ override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPat
     
     func handleClick(sender: UIButton) {
         print("got clicked, making match")
-        print(sender.currentTitle)
 //        making post request to matchmaking
         
     }

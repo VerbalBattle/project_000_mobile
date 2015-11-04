@@ -13,21 +13,14 @@ class UserViewController: UITableViewController {
    
     var avatars: [String:JSON] = [:]
     var avatarID: [String] = []
+    var avatarHandler = AvatarRequests()
+    var buser = User()
 
-    func getUser() ->JSON {
-        if let currentUserStr = NSUserDefaults.standardUserDefaults().stringForKey("user") {
-            if let currentUser = currentUserStr.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false) {
-                
-                return JSON(data: currentUser)
-            }
-        }
-        return JSON("{}")
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.navigationController?.navigationBarHidden = true
-        let user = getUser()
+        let user = buser.getUser()
         for (key,value) in user["avatars"] {
            avatars[key] = value
         }
@@ -49,32 +42,34 @@ class UserViewController: UITableViewController {
     
     func Delete(sender:AnyObject?) {
         print("editing")
+        
         let button = sender as! UIButton
         let view = button.superview  as! UITableViewCell
-        var user = getUser()
+      
+        var user = buser.getUser()
 
         if let cellIndexPath = self.tableView.indexPathForCell(view) {
-            print(cellIndexPath.row)
      //     slice array at index cellIndexPath.row
             let indx = cellIndexPath.row
-            self.avatars.removeValueForKey(avatarID[indx])
+            let curravatarID = avatarID[indx]
+            self.avatars.removeValueForKey(curravatarID)
             avatarID = [String] (avatars.keys)
+            //var i = curravatarID as! Int
+            avatarHandler.deleteAvatar(curravatarID)
         }
         
         user["avatars"] = JSON(self.avatars)
-
+    
         let str = user.rawString(NSUTF8StringEncoding)
         
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.setValue(str, forKey: "user")
         defaults.synchronize()
-        
         self.tableView.reloadData()
     }
     
     func edit(sender: AnyObject) {
         print("deleting")
-        print(sender)
     }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) ->   UITableViewCell {
         let cell = UITableViewCell()
@@ -105,7 +100,7 @@ class UserViewController: UITableViewController {
             aboutMe.text = lab["aboutMe"].string
             if let imageSrc = lab["imageSource"].string {
                 var imageBinary = ""
-                if(imageSrc == "data:,") {
+                if(imageSrc == "data:," || imageSrc == "data:image/png;base64," ) {
                     imageBinary = "R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
 
                 } else {
@@ -116,7 +111,6 @@ class UserViewController: UITableViewController {
         }
         
         imageView.image = image
-        print(imageView)
         cell.addSubview(deleteButton)
         cell.addSubview(editButton)
         cell.addSubview(imageView)

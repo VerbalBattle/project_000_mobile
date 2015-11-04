@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class AvatarDisplayView: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
@@ -16,14 +17,19 @@ class AvatarDisplayView: UIViewController, UINavigationControllerDelegate, UIIma
     @IBOutlet weak var button: UIButton!
     @IBOutlet weak var addImage: UIButton!
     @IBOutlet weak var imageView: UIImageView!
-
+    
+    var buser = User()
     var avatarPost = AvatarRequests()
+    
+    var avatar: String = ""
+    var avatarAboutMe: String = ""
+    var base64String: String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
-override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
 
@@ -40,46 +46,57 @@ override func didReceiveMemoryWarning() {
             imag.allowsEditing = false
             self.presentViewController(imag, animated: true, completion: nil)
         }
-}
+    }
 
-func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: AnyObject]) {
-    
-    var image: UIImage!
-    
-    // fetch the selected image
-    if picker.allowsEditing {
-        image = info[UIImagePickerControllerEditedImage] as! UIImage
-    } else {
-        image = info[UIImagePickerControllerOriginalImage] as! UIImage
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: AnyObject]) {
+        
+        var image: UIImage!
+        
+        // fetch the selected image
+        if picker.allowsEditing {
+            image = info[UIImagePickerControllerEditedImage] as! UIImage
+        } else {
+            image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        }
+        
+        // Do something about image by yourself
+        
+        // dissmiss the image picker controller window
+        
+        
+        func convertImageToBase64(image: UIImage) -> String {
+            let imageData = UIImageJPEGRepresentation(image, 0.0)!
+            let base64String = imageData.base64EncodedStringWithOptions([])
+            return base64String
+        }
+        self.imageView.image = image
+
+        self.base64String = convertImageToBase64(self.imageView.image!)
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    // Do something about image by yourself
-    
-    // dissmiss the image picker controller window
-    
-    
-    func convertImageToBase64(image: UIImage) -> String {
-        var imageData = UIImageJPEGRepresentation(image, 0.0)!
-        let base64String = imageData.base64EncodedStringWithOptions([])
-        return base64String
+    @IBAction func postAvatar(sender: AnyObject) {
+        self.avatar = avatarName.text!
+        self.avatarAboutMe = aboutMe.text!
+//        avatarPost.postAvatar(self.base64String, avatarName: self.avatar, avatarAboutMe: self.avatarAboutMe)
+        avatarPost.postAvatar(self.base64String, avatarName: self.avatar, avatarAboutMe: self.avatarAboutMe, callback: addAvatar)
     }
-    self.imageView.image = image
-
-    var avatar = avatarName.text
-    var avatarAboutMe = aboutMe.text
     
-    var base64String = convertImageToBase64(self.imageView.image!)
-//    print(base64String)
+    func addAvatar(avatar:[String:JSON]) {
+//        get avatarID
+        let curravatarID = [String] (avatar.keys)[0]
+        var user = buser.getUser()
+//        set user avatar object to new avatar JSON object
+        user["avatars"][curravatarID] = avatar[curravatarID]!
+//        save to localstorage
+        let str = user.rawString(NSUTF8StringEncoding)
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setValue(str, forKey: "user")
+        defaults.synchronize()
+        performSegueWithIdentifier("addAvatar", sender: nil)
+    }
     
-
-    avatarPost.postAvatar(base64String, avatarName: avatar!, avatarAboutMe: avatarAboutMe!)
-    
-    self.dismissViewControllerAnimated(true, completion: nil)
-    
-}
     
 //    submit button where all data gets sent to the server -> when making get request while on profile page ->getting the data back
-
-
 }
 

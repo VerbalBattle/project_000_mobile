@@ -191,7 +191,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="ZXp-Nv-XSB">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <rect key="frame" x="0.0" y="64" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <items>
                                 <navigationItem id="jpV-Ny-R1l">
@@ -205,7 +205,7 @@
                         </navigationBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="83" id="q8l-AC-vvf">
-                                <rect key="frame" x="0.0" y="72" width="320" height="83"/>
+                                <rect key="frame" x="0.0" y="136" width="320" height="83"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="q8l-AC-vvf" id="e5e-19-n5a">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="82.5"/>
@@ -294,8 +294,8 @@
                                     <color key="titleColor" red="0.59232089964466139" green="0.96299575053741604" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="postAvatar:" destination="cbG-4c-XIP" eventType="touchUpInside" id="Zga-4w-Uxe"/>
                                     <action selector="submit:" destination="cbG-4c-XIP" eventType="touchUpInside" id="PQP-SH-7Er"/>
-                                    <segue destination="IdH-Hj-65r" kind="show" id="Vip-Ic-peN"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add a new Avatar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FUK-2C-jv4">
@@ -311,7 +311,7 @@
                         <barButtonItem key="backBarButtonItem" title="Profile" id="gaC-Qd-1iS"/>
                         <barButtonItem key="leftBarButtonItem" title="Back" id="Wuq-gX-6dx">
                             <connections>
-                                <segue destination="pUr-Iy-9dt" kind="show" id="Hqt-F3-i9c"/>
+                                <segue destination="pUr-Iy-9dt" kind="show" identifier="addAvatar" id="Hqt-F3-i9c"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -562,9 +562,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Vip-Ic-peN"/>
-        <segue reference="Sgi-3p-bYG"/>
+        <segue reference="tZT-5V-dUY"/>
         <segue reference="ed0-aU-xEY"/>
+        <segue reference="Hqt-F3-i9c"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>

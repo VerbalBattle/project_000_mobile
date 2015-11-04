@@ -24,7 +24,6 @@
 		659ABFC51BE88FEF00F4FCA8 /* chatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659ABFC41BE88FEF00F4FCA8 /* chatController.swift */; };
 		659ABFC71BE8966200F4FCA8 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659ABFC61BE8966200F4FCA8 /* Match.swift */; };
 		659ABFC91BE899C900F4FCA8 /* config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659ABFC81BE899C900F4FCA8 /* config.swift */; };
-		65DB4F861BE73FDA0079BD93 /* AddAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DB4F851BE73FDA0079BD93 /* AddAvatar.swift */; };
 		65DB4F881BE749B10079BD93 /* LobbyTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DB4F871BE749B10079BD93 /* LobbyTableController.swift */; };
 		65DB4F8A1BE7DF0D0079BD93 /* AvatarRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DB4F891BE7DF0D0079BD93 /* AvatarRequests.swift */; };
 		65E13C781BE29CD2004C4C75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E13C771BE29CD2004C4C75 /* AppDelegate.swift */; };
@@ -67,7 +66,6 @@
 		659ABFC81BE899C900F4FCA8 /* config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = config.swift; sourceTree = "<group>"; };
 		65C74BAC1BE43F7D0073C4BA /* ButterUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ButterUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65C74BAD1BE43F7D0073C4BA /* ButterUpTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ButterUpTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		65DB4F851BE73FDA0079BD93 /* AddAvatar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAvatar.swift; sourceTree = "<group>"; };
 		65DB4F871BE749B10079BD93 /* LobbyTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LobbyTableController.swift; sourceTree = "<group>"; };
 		65DB4F891BE7DF0D0079BD93 /* AvatarRequests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarRequests.swift; sourceTree = "<group>"; };
 		65E13C761BE29CD2004C4C75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -125,7 +123,6 @@
 				655F3D3F1BE420990031D9C7 /* UserViewController.swift */,
 				655F3D431BE428AA0031D9C7 /* AvatarDisplayView.swift */,
 				655F3D3D1BE3F31D0031D9C7 /* LoginViewController.swift */,
-				65DB4F851BE73FDA0079BD93 /* AddAvatar.swift */,
 				65DB4F871BE749B10079BD93 /* LobbyTableController.swift */,
 				659ABFC41BE88FEF00F4FCA8 /* chatController.swift */,
 			);
@@ -340,7 +337,6 @@
 			files = (
 				655F3D3E1BE3F31D0031D9C7 /* LoginViewController.swift in Sources */,
 				65E13C7A1BE29CD2004C4C75 /* ViewController.swift in Sources */,
-				65DB4F861BE73FDA0079BD93 /* AddAvatar.swift in Sources */,
 				659ABFC71BE8966200F4FCA8 /* Match.swift in Sources */,
 				655F3D361BE3DA150031D9C7 /* Message.swift in Sources */,
 				655F3D381BE3DA150031D9C7 /* User.swift in Sources */,

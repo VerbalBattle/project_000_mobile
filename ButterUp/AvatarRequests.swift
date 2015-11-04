@@ -9,27 +9,15 @@
 import Foundation
 import UIKit
 import Alamofire
+import SwiftyJSON
 
 class AvatarRequests {
     var token = Auth().getToken()
     let url = "http://localhost:3000"
     
-    func postAvatar(data: String, avatarName:String, avatarAboutMe: String) {
-//        post request to server to send avatar data
-//        post with alamofire
-//        Expected request body example
-        // {
-        //     "avatarData": {
-        //         "avatarName": "joey's avatar",
-        //         "image": binary_stuff_here,
-        //         "aboutMe": "I'm joey and I play to win."
-        //     }
-        // }
-        
-        // Decrypt token
-        
-//        todo: include headers for auth
-        
+    func postAvatar(data: String, avatarName:String, avatarAboutMe:String, callback:([String:JSON])->Void) {
+//    func postAvatar(data:String, avatarName:String, avatarAboutMe:String) {
+
         let URL =  url + "/avatars"
         let headers = ["Authorization": "bearer \(token)"]
 
@@ -45,14 +33,20 @@ class AvatarRequests {
 //        compress image
 //
         Alamofire.request(.POST, URL, parameters: parameters, headers: headers, encoding: .JSON).responseJSON { response in
-            print(response)
+            if let user = response.result.value {
+                let json = JSON(user)
+                for (key, avatar):(String, JSON) in json["avatars"] {
+                    callback([key:avatar])
+                }
+            }
         }
     }
     
-    func deleteAvatar(avatarID: Int) {
+    func deleteAvatar(avatarID: String) {
+        let URL =  url + "/avatars/" + avatarID
+        let headers = ["Authorization": "bearer \(token)"]
         
-        
-        
+        Alamofire.request(.DELETE, URL, headers: headers, encoding: .JSON)
     }
     
     func editAvatar() {
