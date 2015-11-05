@@ -504,11 +504,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ButterUp/LobbyTableController.swift"
-            timestampString = "468443347.502481"
+            timestampString = "468446446.061442"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "148"
-            endingLineNumber = "148"
+            startingLineNumber = "158"
+            endingLineNumber = "158"
             landmarkName = "tableView(_:cellForRowAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -520,11 +520,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ButterUp/RoomViewController.swift"
-            timestampString = "468402450.275787"
+            timestampString = "468448210.741959"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "11"
-            endingLineNumber = "11"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
             landmarkName = "RoomViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -535,14 +535,14 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ButterUp/LobbyTableController.swift"
-            timestampString = "468443347.502481"
+            filePath = "ButterUp/RoomViewController.swift"
+            timestampString = "468449379.32904"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
-            landmarkName = "goRoom(_:)"
-            landmarkType = "5">
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "RoomViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

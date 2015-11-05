@@ -22,6 +22,8 @@
 		655F3D401BE420990031D9C7 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655F3D3F1BE420990031D9C7 /* UserViewController.swift */; };
 		655F3D421BE425A30031D9C7 /* AvatarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655F3D411BE425A30031D9C7 /* AvatarViewController.swift */; };
 		655F3D441BE428AA0031D9C7 /* AvatarDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655F3D431BE428AA0031D9C7 /* AvatarDisplayView.swift */; };
+		656632551BEC11960011FA41 /* VoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656632541BEC11960011FA41 /* VoteController.swift */; };
+		65765BD21BEBED2600E47451 /* RoomRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65765BD11BEBED2600E47451 /* RoomRequest.swift */; };
 		659ABFC51BE88FEF00F4FCA8 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659ABFC41BE88FEF00F4FCA8 /* ChatViewController.swift */; };
 		659ABFC71BE8966200F4FCA8 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659ABFC61BE8966200F4FCA8 /* Match.swift */; };
 		659ABFC91BE899C900F4FCA8 /* config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659ABFC81BE899C900F4FCA8 /* config.swift */; };
@@ -66,6 +68,8 @@
 		655F3D3F1BE420990031D9C7 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		655F3D411BE425A30031D9C7 /* AvatarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarViewController.swift; sourceTree = "<group>"; };
 		655F3D431BE428AA0031D9C7 /* AvatarDisplayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarDisplayView.swift; sourceTree = "<group>"; };
+		656632541BEC11960011FA41 /* VoteController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoteController.swift; sourceTree = "<group>"; };
+		65765BD11BEBED2600E47451 /* RoomRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomRequest.swift; sourceTree = "<group>"; };
 		659ABFC41BE88FEF00F4FCA8 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		659ABFC61BE8966200F4FCA8 /* Match.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 		659ABFC81BE899C900F4FCA8 /* config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = config.swift; sourceTree = "<group>"; };
@@ -111,6 +115,7 @@
 			children = (
 				655F3D391BE3DA310031D9C7 /* AuthRequests.swift */,
 				655F3D331BE3DA150031D9C7 /* Room.swift */,
+				65765BD11BEBED2600E47451 /* RoomRequest.swift */,
 				655F3D321BE3DA150031D9C7 /* Message.swift */,
 				65D087771BEA818000CDEF1C /* MessageRequest.swift */,
 				655F3D341BE3DA150031D9C7 /* User.swift */,
@@ -137,6 +142,7 @@
 				659ABFC41BE88FEF00F4FCA8 /* ChatViewController.swift */,
 				65362E9A1BEA934E0035A476 /* EditAvatarViewController.swift */,
 				65D7549A1BEB3F840096121A /* RoomViewController.swift */,
+				656632541BEC11960011FA41 /* VoteController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -353,6 +359,7 @@
 				655F3D361BE3DA150031D9C7 /* Message.swift in Sources */,
 				655F3D381BE3DA150031D9C7 /* User.swift in Sources */,
 				65DB4F8A1BE7DF0D0079BD93 /* AvatarRequests.swift in Sources */,
+				656632551BEC11960011FA41 /* VoteController.swift in Sources */,
 				655F3D421BE425A30031D9C7 /* AvatarViewController.swift in Sources */,
 				655F3D3B1BE3DA310031D9C7 /* AuthRequests.swift in Sources */,
 				650A95631BE48AE8000556BD /* ChatCell.swift in Sources */,
@@ -365,6 +372,7 @@
 				659ABFC51BE88FEF00F4FCA8 /* ChatViewController.swift in Sources */,
 				65EFC67D1BE82C7400C44AD9 /* SignupViewController.swift in Sources */,
 				655F3D3C1BE3DA310031D9C7 /* Avatar.swift in Sources */,
+				65765BD21BEBED2600E47451 /* RoomRequest.swift in Sources */,
 				65B9E6831BEB330500EC6277 /* MessageRequests.swift in Sources */,
 				65DB4F881BE749B10079BD93 /* LobbyTableController.swift in Sources */,
 				655F3D401BE420990031D9C7 /* UserViewController.swift in Sources */,

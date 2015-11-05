@@ -59,7 +59,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oP5-wD-63G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-236" y="-41"/>
+            <point key="canvasLocation" x="514" y="-29"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="0f1-3R-Ohd">
@@ -87,40 +87,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QLg-Zh-ZAR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1642" y="-3399"/>
-        </scene>
-        <!--Voting-->
-        <scene sceneID="D32-Ve-gnN">
-            <objects>
-                <viewController id="0zh-p3-kGR" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="pLG-5p-ayx"/>
-                        <viewControllerLayoutGuide type="bottom" id="RVi-P7-iYH"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="R8y-OQ-dei">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Voting" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W9k-Jo-KHY">
-                                <rect key="frame" x="132" y="28" width="49" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kxr-qZ-mtK">
-                                <rect key="frame" x="231" y="113" width="46" height="30"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleColor" red="0.40575331815230387" green="0.83227991475851604" blue="0.86188052398989901" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Voting" id="dO3-oL-9hY"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XtD-cc-Zw7" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-807" y="-2562"/>
         </scene>
         <!--Chat-->
         <scene sceneID="hCs-Qk-ixS">
@@ -150,7 +116,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eeH-td-flz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-131" y="335"/>
+            <point key="canvasLocation" x="505" y="795"/>
         </scene>
         <!--Room View Controller-->
         <scene sceneID="YCn-u7-Cuw">
@@ -216,7 +182,74 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qtK-i9-2P0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-89" y="-600"/>
+            <point key="canvasLocation" x="3" y="-544"/>
+        </scene>
+        <!--Vote Controller-->
+        <scene sceneID="n1b-oT-THU">
+            <objects>
+                <viewController id="6oW-2k-aeS" customClass="VoteController" customModule="ButterUp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MAS-7H-9wv"/>
+                        <viewControllerLayoutGuide type="bottom" id="rC3-KZ-PhV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aLn-br-Pms">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ewb-7a-gAe">
+                                <rect key="frame" x="49" y="449" width="53" height="30"/>
+                                <state key="normal" title="Player 1">
+                                    <color key="titleColor" red="0.65300561091601272" green="0.91350133458642979" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kzh-Dl-ekr">
+                                <rect key="frame" x="220" y="449" width="55" height="30"/>
+                                <state key="normal" title="Player 2">
+                                    <color key="titleColor" red="0.62555965293882521" green="0.94107139449861943" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Vote for your favorite" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NRj-Ak-FuZ">
+                                <rect key="frame" x="60" y="420" width="161" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rmr-dr-DmY">
+                                <rect key="frame" x="5" y="92" width="300" height="312"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ew4-c9-6bf"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="vote1" destination="Ewb-7a-gAe" id="KKg-0Q-Qc3"/>
+                        <outlet property="vote2" destination="kzh-Dl-ekr" id="Jvo-DI-h0I"/>
+                        <outlet property="voteView" destination="rmr-dr-DmY" id="1oq-vQ-aGm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5OS-tD-ETr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-202" y="474"/>
+        </scene>
+        <!--Vote-->
+        <scene sceneID="8zu-OV-NhS">
+            <objects>
+                <navigationController id="Dfu-z2-8UQ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Vote" id="VIS-pH-o1K"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hKd-I9-mCi">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="6oW-2k-aeS" kind="relationship" relationship="rootViewController" id="3JF-uc-Jgl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2OA-hH-H13" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-850" y="308"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="sxX-g3-We5">
@@ -232,13 +265,13 @@
                     <connections>
                         <segue destination="pUr-Iy-9dt" kind="relationship" relationship="viewControllers" id="Sgi-3p-bYG"/>
                         <segue destination="Pax-30-yug" kind="relationship" relationship="viewControllers" id="VKi-Ha-rKl"/>
-                        <segue destination="0zh-p3-kGR" kind="relationship" relationship="viewControllers" id="fHk-1D-cjP"/>
                         <segue destination="QuF-UT-gHh" kind="relationship" relationship="viewControllers" id="UJX-W3-4et"/>
+                        <segue destination="Dfu-z2-8UQ" kind="relationship" relationship="viewControllers" id="2Yz-s2-hfp"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dam-8p-saP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1253" y="-779"/>
+            <point key="canvasLocation" x="-1283" y="-667"/>
         </scene>
         <!--Lobby-->
         <scene sceneID="dy3-pI-B4d">

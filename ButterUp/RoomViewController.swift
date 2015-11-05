@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class RoomViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var exitChat: UIBarButtonItem!
@@ -14,11 +15,23 @@ class RoomViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var send: UIButton!
     @IBOutlet weak var input: UITextField!
     @IBOutlet weak var chatView: UITableView!
-    var messages = ["bow", "simon", "zack"]
-    var id: Int = 0
+    var messages = ["hello"]
+    var avatarID: String = ""
+    var roomID: String = ""
+    var room = RoomRequest()
+    
+    
+    func processMessages(messages:[String:JSON]) {
+        print(messages)
+//        use messages to render table view
+        
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("makgin request to rooms", self.roomID)
+        room.getMessages(self.roomID, callback: processMessages)
         self.chatView.delegate = self
         self.chatView.dataSource = self
     }
@@ -40,7 +53,7 @@ class RoomViewController: UIViewController, UITableViewDataSource, UITableViewDe
    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) ->   UITableViewCell {
         let cell = UITableViewCell()
         var label = UILabel(frame: CGRect(x:20, y:20, width:200, height:50))
-        label.text = self.messages[indexPath.row]
+        label.text = self.messages[indexPath.row] as! String
         cell.addSubview(label)
         return cell
     }
@@ -53,8 +66,9 @@ class RoomViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBAction func send(sender: AnyObject) {
         var inp = input.text
         input.text = ""
-        if inp! != ""{
         
+        if inp! != ""{
+        room.postMessage(self.roomID, message: inp!, avID: self.avatarID)
         self.messages.append(inp!)
         self.chatView.reloadData()
         }

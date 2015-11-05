@@ -42,7 +42,7 @@ class LobbyTableController: UITableViewController {
     }
     
     func matchmaking(sender: AnyObject) {
-        print(sender)
+       
         let button = sender as! UIButton
         let view = button.superview  as! UITableViewCell
         
@@ -72,11 +72,12 @@ class LobbyTableController: UITableViewController {
     }
     
     func goRoom (sender: UIButton) {
-        print("going to room")
+        print("going to room", sender.titleLabel!.text)
         let  viewController = self.storyboard!.instantiateViewControllerWithIdentifier("realRoom") as! RoomViewController
         let navController = UINavigationController(rootViewController: viewController)
 
-        
+        var user = buser.getUser()
+
         let button = sender as! UIButton
         
         let view = button.superview  as! UITableViewCell
@@ -85,12 +86,16 @@ class LobbyTableController: UITableViewController {
             //     slice array at index cellIndexPath.row
             let indx = cellIndexPath.row
             let curravatarID = avatarID[indx]
-            viewController.id = Int(curravatarID)!
+            if let roomID =  sender.titleLabel!.text {
+                viewController.roomID = roomID
+            }
+            viewController.avatarID = curravatarID
+
+          
+            
 //            tabViewController.roomID = Int()
             
 //            getting roomID
-            var user = User()
-            var u = user.getUser()
 ////            getting the number of which room is actually getting chose
 //            tabViewController.roomID = u["avatars"][curravatarID]["rooms"]["1"]["roomID"].string!
 //            print(u["avatars"][curravatarID]["rooms"]["1"]["roomID"], "this is what i want to print") -> getting roomID to pass to roomviewcontroller
@@ -112,33 +117,38 @@ class LobbyTableController: UITableViewController {
         let button = UIButton(frame: CGRect(x:180, y:40, width:140, height:60))
         button.addTarget(self, action: "matchmaking:", forControlEvents: .TouchUpInside)
         
-        button.setTitle("Make Match", forState: UIControlState.Normal)
+//        button.setTitle("Make Match", forState: UIControlState.Normal)
         button.backgroundColor = UIColor.greenColor()
         cell.addSubview(button)
         var label = UILabel(frame: CGRect(x:280, y:40, width:140, height:60))
         var joinRoom = UIButton(frame: CGRect(x:140, y:40, width:140, height:60))
         joinRoom.backgroundColor = UIColor.blueColor()
-        joinRoom.addTarget(self, action: "goRoom:", forControlEvents: .TouchUpInside)
+        button.addTarget(self, action: "goRoom:", forControlEvents: .TouchUpInside)
         
         if let lab = self.avatar[avatarID[indexPath.row]] {
             avatarName.text = lab["avatarName"].string
+           
             aboutMe.text = lab["aboutMe"].string
             var rooms = lab["rooms"]
             
             for (key,subJson):(String, JSON) in rooms {
-//                print(subJson)
+//
+//                 avatarName.text = subJson["roomID"].string
                 var opponent = subJson["opponentName"]
                 joinRoom.setTitle(subJson["roomID"].string, forState: UIControlState.Normal)
                 label.text = opponent.string
 //             atach value to button to see which id got picked -> send roomID to cha view
 //                and make get/post to rooms/:roomID to get all the messages
-                print(subJson["roomID"])
+                print(subJson["roomID"], "this is the reak roomsid")
+//                does not get added to button as value -> maybe because not av sometimes
+                  button.setTitle("1", forState: UIControlState.Normal)
+                joinRoom.setTitle(subJson["roomID"].string, forState: UIControlState.Normal)
             }
             
             
             
-            print("rooms", rooms)
-            cell.addSubview(joinRoom)
+          
+//            cell.addSubview(joinRoom)
             cell.addSubview(label)
             cell.addSubview(aboutMe)
             cell.addSubview(avatarName)
