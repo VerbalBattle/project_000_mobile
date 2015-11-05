@@ -36,6 +36,7 @@ class AvatarDisplayView: UIViewController, UINavigationControllerDelegate, UIIma
     @IBAction func submit(sender: AnyObject) {
         print("submit")
     }
+    
     @IBAction func addImage(sender: AnyObject) {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary){
             print("Button capture")
@@ -45,7 +46,6 @@ class AvatarDisplayView: UIViewController, UINavigationControllerDelegate, UIIma
             //imag.mediaTypes = [kUTTypeImage];
             imag.allowsEditing = false
             self.presentViewController(imag, animated: true, completion: nil)
-//        }
         }
     }
 

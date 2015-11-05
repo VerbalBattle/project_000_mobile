@@ -76,6 +76,29 @@ class AvatarRequests {
 
     }
     
+    
+    func matchMaking (id: Int, elo: Int, type: String, winloss: Int, winStreak: Int) {
+        
+        let parameters = [
+            "avatarID": id,
+            "avatarStats": [
+                "elo":elo,
+                "winStreak":winStreak,
+                "winLossRatio":winloss,
+                "avatarType":type
+            ]
+        ]
+        
+        let URL =  url + "/matchmaking"
+        let headers = ["Authorization": "bearer \(token)"]
+        
+        Alamofire.request(.POST, URL, parameters: (parameters as! [String : AnyObject])
+            , headers: headers, encoding: .JSON)
+        
+
+        
+    }
+    
  }
 
 

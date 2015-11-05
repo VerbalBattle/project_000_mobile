@@ -35,7 +35,7 @@ class editAvatar: UIViewController, UINavigationControllerDelegate, UIImagePicke
         avatarName.text = name
         aboutMe.text = about
     }
-    
+        
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

@@ -84,7 +84,7 @@ class UserViewController: UITableViewController {
         print("editing")
         let viewController = self.storyboard!.instantiateViewControllerWithIdentifier("edit") as! editAvatar
         
-        
+        let navController = UINavigationController(rootViewController: viewController)
         let button = sender as! UIButton
         let view = button.superview  as! UITableViewCell
         
@@ -95,11 +95,9 @@ class UserViewController: UITableViewController {
             viewController.id = curravatarID
             viewController.about = avatars[curravatarID]!["aboutMe"].string!
             viewController.name = avatars[curravatarID]!["avatarName"].string!
-
         }
-            
-        self.presentViewController(viewController, animated: true, completion: nil)
-        performSegueWithIdentifier("editAvatar", sender: sender)
+        self.presentViewController(navController, animated: true, completion: nil)
+
     }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) ->   UITableViewCell {
         let cell = UITableViewCell()

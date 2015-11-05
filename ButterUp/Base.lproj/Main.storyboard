@@ -197,7 +197,7 @@
                                 <navigationItem id="jpV-Ny-R1l">
                                     <barButtonItem key="leftBarButtonItem" title="Add Avatar" id="zEF-rw-MnF">
                                         <connections>
-                                            <segue destination="8R3-Ko-uuG" kind="show" identifier="addAvatarSegue" id="J7T-Hp-YNx"/>
+                                            <segue destination="8R3-Ko-uuG" kind="show" identifier="" id="J7T-Hp-YNx"/>
                                         </connections>
                                     </barButtonItem>
                                 </navigationItem>
@@ -221,9 +221,6 @@
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" title="Profile" id="HqB-Np-R0C"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                    <connections>
-                        <segue destination="TGm-Nj-lf0" kind="show" identifier="editAvatar" id="lk1-SK-dSP"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ef0-xE-NJe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -398,7 +395,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="aboutMe" destination="S4R-9S-Pvu" id="GZS-tc-LIt"/>
