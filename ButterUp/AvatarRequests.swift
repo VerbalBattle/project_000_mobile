@@ -24,7 +24,7 @@ class AvatarRequests {
         let parameters = [
             "avatarData": [
                 "avatarName": avatarName,
-                "imageSource": "data:image/png;base64," + data,
+                "imageSource": data,
                 "aboutMe": avatarAboutMe
             ]
         ]
@@ -61,16 +61,17 @@ class AvatarRequests {
     
     func putAvatar(avatarID: String, data: String, avatarName:String, AboutMe: String) {
         
-        let params = [
-            "image": data,
-            "avatarName": avatarName,
-            "aboutMe": AboutMe
+        let parameters = [
+            "avatarData": [
+                "imageSource": data,
+                "aboutMe": AboutMe
+            ]
         ]
-        
+
         let URL =  url + "/avatars/" + avatarID
         let headers = ["Authorization": "bearer \(token)"]
         
-        Alamofire.request(.PUT, URL, headers: headers, encoding: .JSON)
+        Alamofire.request(.PUT, URL, parameters: parameters, headers: headers, encoding: .JSON)
 
 
     }

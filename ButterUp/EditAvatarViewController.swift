@@ -1,5 +1,5 @@
 //
-//  editAvatar.swift
+//  editAvatarViewController.swift
 //  ButterUp
 //
 //  Created by Horst Schmalfuß on 04.11.15.
@@ -14,8 +14,12 @@ class editAvatar: UIViewController, UINavigationControllerDelegate, UIImagePicke
     @IBOutlet weak var editAvatar: UIButton!
     @IBOutlet weak var changeImage: UIButton!
     @IBOutlet weak var editedImage: UIImageView!
-    @IBOutlet weak var username: UITextField!
-
+    @IBOutlet weak var avatarName: UITextField!
+    var id: String = ""
+    var about:  String = ""
+    var name: String = ""
+    var imageD: String = ""
+    @IBOutlet weak var cancelEdit: UIBarButtonItem!
     @IBOutlet weak var aboutMe: UITextField!
     
     var base64String: String = ""
@@ -28,8 +32,8 @@ class editAvatar: UIViewController, UINavigationControllerDelegate, UIImagePicke
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("calling edit controller")
-        
+        avatarName.text = name
+        aboutMe.text = about
     }
     
     override func didReceiveMemoryWarning() {
@@ -48,12 +52,7 @@ class editAvatar: UIViewController, UINavigationControllerDelegate, UIImagePicke
             imag.allowsEditing = false
             self.presentViewController(imag, animated: true, completion: nil)
         }
-
-        
-        
     }
-    
-    
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: AnyObject]) {
         
@@ -72,51 +71,41 @@ class editAvatar: UIViewController, UINavigationControllerDelegate, UIImagePicke
         func convertImageToBase64(image: UIImage) -> String {
             let imageData = UIImageJPEGRepresentation(image, 0.0)!
             let base64String = imageData.base64EncodedStringWithOptions([])
-            return base64String
+            return "data:image/png;base64," + base64String
         }
-        
         self.base64String = convertImageToBase64(self.editedImage.image!)
-        
-        
         self.dismissViewControllerAnimated(true, completion: nil)
-
+    }
+    
+    @IBAction func cancelEdit(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: {});
     }
     
     @IBAction func editAvatar(sender: AnyObject) {
         print("hello clicked")
 //        put request to avatars
-        let image = self.base64String
-        let avatarName = self.username.text
-        let aboutMe = self.aboutMe.text
-        
         var user = buser.getUser()
         //        set user avatar object to new avatar JSON object
 //        getting id from segue for this 3
 
 //        build avatar with current values
         
-        user["avatars"]["35"]["aboutMe"] = JSON(self.aboutMe.text!)
-        user["avatars"]["35"]["avatarName"] = JSON(self.username.text!)
-        user["avatars"]["35"]["imageSource"] = JSON(self.base64String)
+        user["avatars"][self.id]["aboutMe"] = JSON(self.aboutMe.text!)
+        user["avatars"][self.id]["avatarName"] = JSON(self.avatarName.text!)
+        user["avatars"][self.id]["imageSource"] = JSON(self.base64String)
 ////        this time not getting back anything from the server -> jsonify it??
-//        user["avatars"]["3"] = avatar
         //save to localstorage
         let str = user.rawString(NSUTF8StringEncoding)
-        print(str)
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.setValue(str, forKey: "user")
         defaults.synchronize()
-        
        
         NSNotificationCenter.defaultCenter().postNotificationName("load", object: nil)
         self.dismissViewControllerAnimated(true, completion: {});
 
-        
-      
 //        data name aboutMe
-        let id = String(35)
-        
-        avatarHandler.putAvatar(id, data:image, avatarName:avatarName!, AboutMe:aboutMe!)
+        print("simon ID",self.id)
+        avatarHandler.putAvatar(self.id, data:self.base64String, avatarName:self.avatarName.text!, AboutMe:self.aboutMe.text!)
     }
     
 }

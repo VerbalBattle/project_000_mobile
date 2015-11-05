@@ -12,7 +12,7 @@
 		650A95611BE48A5B000556BD /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650A95601BE48A5B000556BD /* MessageViewController.swift */; };
 		650A95631BE48AE8000556BD /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650A95621BE48AE8000556BD /* ChatCell.swift */; };
 		6514BEE81BE9AC5F00EE4696 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6514BEE71BE9AC5F00EE4696 /* SettingsViewController.swift */; };
-		65362E9B1BEA934E0035A476 /* editAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65362E9A1BEA934E0035A476 /* editAvatar.swift */; };
+		65362E9B1BEA934E0035A476 /* EditAvatarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65362E9A1BEA934E0035A476 /* EditAvatarViewController.swift */; };
 		655F3D361BE3DA150031D9C7 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655F3D321BE3DA150031D9C7 /* Message.swift */; };
 		655F3D371BE3DA150031D9C7 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655F3D331BE3DA150031D9C7 /* Room.swift */; };
 		655F3D381BE3DA150031D9C7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655F3D341BE3DA150031D9C7 /* User.swift */; };
@@ -53,7 +53,7 @@
 		650A95621BE48AE8000556BD /* ChatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
 		650A95661BE4B40B000556BD /* importLibs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = importLibs.h; sourceTree = "<group>"; };
 		6514BEE71BE9AC5F00EE4696 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		65362E9A1BEA934E0035A476 /* editAvatar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = editAvatar.swift; sourceTree = "<group>"; };
+		65362E9A1BEA934E0035A476 /* EditAvatarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditAvatarViewController.swift; sourceTree = "<group>"; };
 		653FEAC61BE869B10002814B /* ButterUp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ButterUp-Bridging-Header.h"; sourceTree = "<group>"; };
 		655F3D321BE3DA150031D9C7 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		655F3D331BE3DA150031D9C7 /* Room.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
@@ -130,7 +130,7 @@
 				655F3D3D1BE3F31D0031D9C7 /* LoginViewController.swift */,
 				65DB4F871BE749B10079BD93 /* LobbyTableController.swift */,
 				659ABFC41BE88FEF00F4FCA8 /* chatController.swift */,
-				65362E9A1BEA934E0035A476 /* editAvatar.swift */,
+				65362E9A1BEA934E0035A476 /* EditAvatarViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -363,7 +363,7 @@
 				659ABFC91BE899C900F4FCA8 /* config.swift in Sources */,
 				655F3D441BE428AA0031D9C7 /* AvatarDisplayView.swift in Sources */,
 				655F3D371BE3DA150031D9C7 /* Room.swift in Sources */,
-				65362E9B1BEA934E0035A476 /* editAvatar.swift in Sources */,
+				65362E9B1BEA934E0035A476 /* EditAvatarViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

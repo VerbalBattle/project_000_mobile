@@ -38,7 +38,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K22-nG-2SE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-807" y="-1288"/>
+            <point key="canvasLocation" x="-801" y="-1216"/>
         </scene>
         <!--Chat-->
         <scene sceneID="Zyn-a7-aBS">
@@ -187,11 +187,11 @@
             <objects>
                 <tableViewController clearsSelectionOnViewWillAppear="NO" id="pUr-Iy-9dt" customClass="UserViewController" customModule="ButterUp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="83" sectionHeaderHeight="28" sectionFooterHeight="28" id="hd4-XR-Tdu">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="ZXp-Nv-XSB">
-                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <items>
                                 <navigationItem id="jpV-Ny-R1l">
@@ -205,10 +205,10 @@
                         </navigationBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="83" id="q8l-AC-vvf">
-                                <rect key="frame" x="0.0" y="72" width="600" height="83"/>
+                                <rect key="frame" x="0.0" y="72" width="320" height="83"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="q8l-AC-vvf" id="e5e-19-n5a">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="82.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="82.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -220,8 +220,9 @@
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" title="Profile" id="HqB-Np-R0C"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <segue destination="duc-YW-snE" kind="show" identifier="editAvatar" id="1Vz-J6-FFu"/>
+                        <segue destination="TGm-Nj-lf0" kind="show" identifier="editAvatar" id="lk1-SK-dSP"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ef0-xE-NJe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -243,7 +244,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x1V-f5-A3i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-362" y="-1934"/>
+            <point key="canvasLocation" x="-342" y="-1934"/>
         </scene>
         <!--Add Avatar-->
         <scene sceneID="zp4-RG-2XC">
@@ -312,7 +313,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add Avatar" id="Rmr-qZ-iwS">
-                        <barButtonItem key="backBarButtonItem" title="Profile" id="gaC-Qd-1iS"/>
                         <barButtonItem key="leftBarButtonItem" title="Back" id="Wuq-gX-6dx">
                             <connections>
                                 <action selector="returnToProfileView:" destination="cbG-4c-XIP" id="Qdr-k4-qHa"/>
@@ -330,12 +330,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T3J-vp-ABG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="120" y="-1934"/>
+            <point key="canvasLocation" x="128" y="-1934"/>
         </scene>
         <!--Edit Avatar-->
         <scene sceneID="ROH-Am-5KR">
             <objects>
-                <viewController id="duc-YW-snE" customClass="editAvatar" customModule="ButterUp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="edit" id="duc-YW-snE" customClass="editAvatar" customModule="ButterUp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lBw-Ta-ycu"/>
                         <viewControllerLayoutGuide type="bottom" id="hov-Yj-LDh"/>
@@ -345,29 +345,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CuZ-bl-Unb">
-                                <rect key="frame" x="55" y="38" width="97" height="30"/>
+                                <rect key="frame" x="55" y="93" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YqG-Ym-fOd">
-                                <rect key="frame" x="240" y="407" width="74" height="30"/>
-                                <state key="normal" title="Edit Avatar">
-                                    <color key="titleColor" red="0.55749748313919056" green="1" blue="0.98405454486302346" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="editAvatar:" destination="duc-YW-snE" eventType="touchUpInside" id="aUa-j5-v5S"/>
-                                    <segue destination="IdH-Hj-65r" kind="show" id="bN9-xD-xBS"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="baZ-Sl-eEy">
                                 <rect key="frame" x="30" y="227" width="240" height="128"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMn-TA-nFm">
-                                <rect key="frame" x="178" y="42" width="79" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="About Me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W61-CV-iaI">
                                 <rect key="frame" x="182" y="162" width="75" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -375,8 +359,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s7J-oW-zh5">
-                                <rect key="frame" x="55" y="407" width="99" height="30"/>
-                                <state key="normal" title="Change Image">
+                                <rect key="frame" x="114" y="395" width="74" height="30"/>
+                                <state key="normal" title="Add Image">
                                     <color key="titleColor" red="0.76959559959229651" green="1" blue="0.96959054145151002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -388,21 +372,69 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YqG-Ym-fOd">
+                                <rect key="frame" x="113" y="433" width="74" height="30"/>
+                                <state key="normal" title="Edit Avatar">
+                                    <color key="titleColor" red="0.55749748313919056" green="1" blue="0.98405454486302346" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="editAvatar:" destination="duc-YW-snE" eventType="touchUpInside" id="aUa-j5-v5S"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Avatar Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMn-TA-nFm" userLabel="Avatar Name">
+                                <rect key="frame" x="182" y="97" width="98" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Edit Avatar" id="b6s-aa-Ak1">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="5da-RT-chz">
+                            <connections>
+                                <action selector="cancelEdit:" destination="duc-YW-snE" id="3af-oN-5zN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="aboutMe" destination="S4R-9S-Pvu" id="GZS-tc-LIt"/>
+                        <outlet property="avatarName" destination="CuZ-bl-Unb" id="WIu-IE-D0p"/>
+                        <outlet property="cancelEdit" destination="5da-RT-chz" id="bJ1-OM-hxP"/>
                         <outlet property="changeImage" destination="s7J-oW-zh5" id="Mj6-aZ-Jhf"/>
                         <outlet property="editAvatar" destination="YqG-Ym-fOd" id="PF9-iJ-WNB"/>
                         <outlet property="editedImage" destination="baZ-Sl-eEy" id="v2e-Mu-DmU"/>
-                        <outlet property="username" destination="CuZ-bl-Unb" id="ICd-5J-CxX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="19t-HM-j70" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-342" y="-1024"/>
+            <point key="canvasLocation" x="120" y="-1288"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="GDe-Dj-Roh">
+            <objects>
+                <navigationController id="TGm-Nj-lf0" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Szc-MM-T1J"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Qiu-GD-h8h">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="tZ7-II-i6p">
+                        <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="duc-YW-snE" kind="relationship" relationship="rootViewController" id="KGM-P0-VFe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xo9-x2-sd2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-342" y="-1288"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="k7I-N9-VH8">
@@ -638,7 +670,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="bN9-xD-xBS"/>
+        <segue reference="tZT-5V-dUY"/>
         <segue reference="ed0-aU-xEY"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>

@@ -82,6 +82,23 @@ class UserViewController: UITableViewController {
     
     func edit(sender: AnyObject) {
         print("editing")
+        let viewController = self.storyboard!.instantiateViewControllerWithIdentifier("edit") as! editAvatar
+        
+        
+        let button = sender as! UIButton
+        let view = button.superview  as! UITableViewCell
+        
+        if let cellIndexPath = self.tableView.indexPathForCell(view) {
+            //     slice array at index cellIndexPath.row
+            let indx = cellIndexPath.row
+            let curravatarID = avatarID[indx]
+            viewController.id = curravatarID
+            viewController.about = avatars[curravatarID]!["aboutMe"].string!
+            viewController.name = avatars[curravatarID]!["avatarName"].string!
+
+        }
+            
+        self.presentViewController(viewController, animated: true, completion: nil)
         performSegueWithIdentifier("editAvatar", sender: sender)
     }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) ->   UITableViewCell {

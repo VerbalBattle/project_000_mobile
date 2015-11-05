@@ -64,7 +64,7 @@ class AvatarDisplayView: UIViewController, UINavigationControllerDelegate, UIIma
         func convertImageToBase64(image: UIImage) -> String {
             let imageData = UIImageJPEGRepresentation(image, 0.0)!
             let base64String = imageData.base64EncodedStringWithOptions([])
-            return base64String
+            return "data:image/png;base64," + base64String
         }
         self.imageView.image = image
 
@@ -96,9 +96,6 @@ class AvatarDisplayView: UIViewController, UINavigationControllerDelegate, UIIma
         NSNotificationCenter.defaultCenter().postNotificationName("load", object: nil)
         self.dismissViewControllerAnimated(true, completion: {});
     }
-   
-    
-    
 //    submit button where all data gets sent to the server -> when making get request while on profile page ->getting the data back
 }
 
