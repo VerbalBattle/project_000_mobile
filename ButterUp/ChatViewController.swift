@@ -15,10 +15,12 @@ class ChatViewController: UITableViewController {
     
     var messages = ["hello you fucker", " you are a fucker!!!", "getting chocolate?", "german...", "hello bowen"]
     var avatars = ["simon", "bowen", "simon", "bowen", "simo", "bowen", "simon", "bowen"]
-    
+    var id: Int = 0
+    var roomID:String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("got id", self.id, "my room is is", self.roomID)
     }
     
     override func didReceiveMemoryWarning() {

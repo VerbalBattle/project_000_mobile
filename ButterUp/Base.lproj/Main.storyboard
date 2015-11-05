@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="IdH-Hj-65r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="btL-SY-QP0">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
@@ -125,7 +125,7 @@
         <!--Chat-->
         <scene sceneID="hCs-Qk-ixS">
             <objects>
-                <tableViewController id="CfG-oR-Qb4" customClass="ChatViewController" customModule="ButterUp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="room" id="CfG-oR-Qb4" customClass="ChatViewController" customModule="ButterUp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="QCh-7t-65V">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -184,8 +184,11 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SK2-BN-gfb">
-                                <rect key="frame" x="199" y="479" width="101" height="30"/>
+                                <rect key="frame" x="110" y="479" width="101" height="30"/>
                                 <state key="normal" title="Send Message"/>
+                                <connections>
+                                    <action selector="send:" destination="ilx-ma-h9t" eventType="touchUpInside" id="nPv-ON-F7d"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -200,6 +203,8 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="chatView" destination="WGl-XE-hpg" id="bi8-0N-Rdj"/>
+                        <outlet property="input" destination="HzX-gS-TK7" id="v7Q-p3-9h9"/>
+                        <outlet property="send" destination="SK2-BN-gfb" id="hJJ-qY-x8c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qtK-i9-2P0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -222,7 +227,6 @@
                         <segue destination="Pax-30-yug" kind="relationship" relationship="viewControllers" id="VKi-Ha-rKl"/>
                         <segue destination="0zh-p3-kGR" kind="relationship" relationship="viewControllers" id="fHk-1D-cjP"/>
                         <segue destination="QuF-UT-gHh" kind="relationship" relationship="viewControllers" id="UJX-W3-4et"/>
-                        <segue destination="CfG-oR-Qb4" kind="relationship" relationship="viewControllers" id="P5i-wh-2Kl"/>
                         <segue destination="ilx-ma-h9t" kind="relationship" relationship="viewControllers" id="Who-jH-ZuA"/>
                     </connections>
                 </tabBarController>

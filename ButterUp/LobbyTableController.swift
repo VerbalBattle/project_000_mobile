@@ -25,6 +25,7 @@ class LobbyTableController: UITableViewController {
         super.viewDidLoad()
 
         let user = buser.getUser()
+       
         for (key,value) in user["avatars"] {
             avatar[key] = value
         }
@@ -50,8 +51,7 @@ class LobbyTableController: UITableViewController {
         if let cellIndexPath = self.tableView.indexPathForCell(view) {
             let indx = cellIndexPath.row
             let curravatarID = avatarID[indx]
-            print(curravatarID)
-            
+          
             if let item = avatar[curravatarID] {
 //                print(item["stats"])
 //                elo: avatarStats['Elo'],
@@ -63,12 +63,46 @@ class LobbyTableController: UITableViewController {
                 var type = item["stats"]["avatarType"].string
                 var winLossRatio = item["stats"]["winLossRatio"].intValue
                 var winStr = item["stats"]["winStreak"].int
+               
                 avatarHandler.matchMaking(Int(curravatarID)! , elo: elo, type: type!, winloss: winLossRatio, winStreak: winStr!)
             }
             
         }
         
     }
+    
+    func goRoom (sender: UIButton) {
+        print("going to room")
+        let tabViewController = self.storyboard!.instantiateViewControllerWithIdentifier("room") as! ChatViewController
+        
+        let button = sender as!
+        UIButton
+        
+        let view = button.superview  as! UITableViewCell
+        
+        if let cellIndexPath = self.tableView.indexPathForCell(view) {
+            //     slice array at index cellIndexPath.row
+            let indx = cellIndexPath.row
+            let curravatarID = avatarID[indx]
+            tabViewController.id = Int(curravatarID)!
+//            tabViewController.roomID = Int()
+            
+//            getting roomID
+            var user = User()
+            var u = user.getUser()
+////            getting the number of which room is actually getting chose
+//            tabViewController.roomID = u["avatars"][curravatarID]["rooms"]["1"]["roomID"].string!
+//            print(u["avatars"][curravatarID]["rooms"]["1"]["roomID"], "this is what i want to print")
+//           
+           
+        }
+        self.presentViewController(tabViewController, animated: true, completion: nil)
+        
+    
+}
+
+       
+
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) ->   UITableViewCell {
         let cell = UITableViewCell()
@@ -80,11 +114,30 @@ class LobbyTableController: UITableViewController {
         button.setTitle("Make Match", forState: UIControlState.Normal)
         button.backgroundColor = UIColor.greenColor()
         cell.addSubview(button)
-        
+        var label = UILabel(frame: CGRect(x:280, y:40, width:140, height:60))
+        var joinRoom = UIButton(frame: CGRect(x:140, y:40, width:140, height:60))
+        joinRoom.backgroundColor = UIColor.blueColor()
+        joinRoom.addTarget(self, action: "goRoom:", forControlEvents: .TouchUpInside)
         
         if let lab = self.avatar[avatarID[indexPath.row]] {
             avatarName.text = lab["avatarName"].string
             aboutMe.text = lab["aboutMe"].string
+            var rooms = lab["rooms"]
+            
+            for (key,subJson):(String, JSON) in rooms {
+//                print(subJson)
+                var opponent = subJson["opponentName"]
+                joinRoom.setTitle(subJson["roomID"].string, forState: UIControlState.Normal)
+                label.text = opponent.string
+//             atach value to button to see which id got picked
+                print(subJson["roomID"])
+            }
+            
+            
+            
+            print("rooms", rooms)
+            cell.addSubview(joinRoom)
+            cell.addSubview(label)
             cell.addSubview(aboutMe)
             cell.addSubview(avatarName)
             
@@ -106,4 +159,5 @@ class LobbyTableController: UITableViewController {
         
     }
 
- }
+ 
+}
