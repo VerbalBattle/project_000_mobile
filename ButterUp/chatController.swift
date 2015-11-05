@@ -11,7 +11,7 @@ import UIKit
 class chatController: UITableViewController {
     
     var messages = ["hello you fucker", " you are a fucker!!!", "getting chocolate?", "german..."]
-    var avatars = ["simon", "bowen", "simon", "bowen"]
+    var avatars = ["simon", "bowen", "simon", "bowen", "simo", "bowen", "simon", "bowen"]
     
     
     override func viewDidLoad() {
@@ -26,6 +26,11 @@ class chatController: UITableViewController {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.messages.count
+    }
+    
+    func append() {
+//        get input value and append it to messages array
+        
     }
     
     

@@ -18,6 +18,7 @@ class UserViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+  
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadList:", name:"load", object: nil)
         // Do any additional setup after loading the view, typically from a nib.
         self.navigationController?.navigationBarHidden = true
