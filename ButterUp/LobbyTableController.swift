@@ -73,10 +73,11 @@ class LobbyTableController: UITableViewController {
     
     func goRoom (sender: UIButton) {
         print("going to room")
-        let tabViewController = self.storyboard!.instantiateViewControllerWithIdentifier("realRoom") as! RoomViewController
+        let  viewController = self.storyboard!.instantiateViewControllerWithIdentifier("realRoom") as! RoomViewController
+        let navController = UINavigationController(rootViewController: viewController)
+
         
-        let button = sender as!
-        UIButton
+        let button = sender as! UIButton
         
         let view = button.superview  as! UITableViewCell
         
@@ -84,7 +85,7 @@ class LobbyTableController: UITableViewController {
             //     slice array at index cellIndexPath.row
             let indx = cellIndexPath.row
             let curravatarID = avatarID[indx]
-            tabViewController.id = Int(curravatarID)!
+            viewController.id = Int(curravatarID)!
 //            tabViewController.roomID = Int()
             
 //            getting roomID
@@ -96,7 +97,7 @@ class LobbyTableController: UITableViewController {
 //           
            
         }
-        self.presentViewController(tabViewController, animated: true, completion: nil)
+        self.presentViewController(navController, animated: true, completion: nil)
         
     
 }

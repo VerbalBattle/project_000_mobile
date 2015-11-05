@@ -39,7 +39,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K22-nG-2SE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-801" y="-1216"/>
+            <point key="canvasLocation" x="-825" y="-1214"/>
         </scene>
         <!--Chat-->
         <scene sceneID="Zyn-a7-aBS">
@@ -150,9 +150,9 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eeH-td-flz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-801" y="17"/>
+            <point key="canvasLocation" x="-131" y="335"/>
         </scene>
-        <!--Item-->
+        <!--Room View Controller-->
         <scene sceneID="YCn-u7-Cuw">
             <objects>
                 <viewController storyboardIdentifier="realRoom" id="ilx-ma-h9t" customClass="RoomViewController" customModule="ButterUp" customModuleProvider="target" sceneMemberID="viewController">
@@ -169,7 +169,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="6qk-aL-MfV">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6qk-aL-MfV" id="2jU-7Z-heM">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
@@ -178,11 +178,6 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HzX-gS-TK7">
-                                <rect key="frame" x="0.0" y="441" width="320" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SK2-BN-gfb">
                                 <rect key="frame" x="110" y="479" width="101" height="30"/>
                                 <state key="normal" title="Send Message"/>
@@ -190,26 +185,38 @@
                                     <action selector="send:" destination="ilx-ma-h9t" eventType="touchUpInside" id="nPv-ON-F7d"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HzX-gS-TK7">
+                                <rect key="frame" x="0.0" y="441" width="320" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="HzX-gS-TK7" firstAttribute="top" secondItem="WGl-XE-hpg" secondAttribute="bottom" constant="24" id="MOh-an-97T"/>
                             <constraint firstAttribute="trailingMargin" secondItem="SK2-BN-gfb" secondAttribute="trailing" constant="-20" id="Y3n-H7-etd"/>
                             <constraint firstItem="WAI-da-pIS" firstAttribute="top" secondItem="SK2-BN-gfb" secondAttribute="bottom" constant="10" id="eaY-Rh-nbk"/>
+                            <constraint firstItem="SK2-BN-gfb" firstAttribute="top" secondItem="HzX-gS-TK7" secondAttribute="bottom" id="m6p-Wt-YxU"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="8WS-xr-vhY"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationItem key="navigationItem" id="3yA-nO-kP2">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="xJc-9d-y0C">
+                            <connections>
+                                <action selector="exitChat:" destination="ilx-ma-h9t" id="va1-Xi-7yR"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="chatView" destination="WGl-XE-hpg" id="bi8-0N-Rdj"/>
+                        <outlet property="exitChat" destination="xJc-9d-y0C" id="KPc-ir-sBe"/>
                         <outlet property="input" destination="HzX-gS-TK7" id="v7Q-p3-9h9"/>
                         <outlet property="send" destination="SK2-BN-gfb" id="hJJ-qY-x8c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qtK-i9-2P0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-801" y="661"/>
+            <point key="canvasLocation" x="-89" y="-600"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="sxX-g3-We5">
@@ -227,7 +234,6 @@
                         <segue destination="Pax-30-yug" kind="relationship" relationship="viewControllers" id="VKi-Ha-rKl"/>
                         <segue destination="0zh-p3-kGR" kind="relationship" relationship="viewControllers" id="fHk-1D-cjP"/>
                         <segue destination="QuF-UT-gHh" kind="relationship" relationship="viewControllers" id="UJX-W3-4et"/>
-                        <segue destination="ilx-ma-h9t" kind="relationship" relationship="viewControllers" id="Who-jH-ZuA"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dam-8p-saP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -259,10 +265,13 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Lobby" id="orU-C9-anK"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <segue destination="uGF-Qf-5ak" kind="show" id="9Xo-QI-MP0"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cr0-Mz-K47" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-801" y="-600"/>
+            <point key="canvasLocation" x="-833" y="-488"/>
         </scene>
         <!--Profile-->
         <scene sceneID="m3F-Ng-Em6">
@@ -747,6 +756,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tVo-2g-jRk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2606" y="-806"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="LHG-xa-eao">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uGF-Qf-5ak" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="8WS-xr-vhY"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nml-xq-o5e">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ilx-ma-h9t" kind="relationship" relationship="rootViewController" id="qE5-1n-a34"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ycG-Lv-hnX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-435" y="-552"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

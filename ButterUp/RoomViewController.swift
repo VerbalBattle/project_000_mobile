@@ -9,6 +9,7 @@
 import UIKit
 
 class RoomViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    @IBOutlet weak var exitChat: UIBarButtonItem!
     
     @IBOutlet weak var send: UIButton!
     @IBOutlet weak var input: UITextField!
@@ -25,6 +26,9 @@ class RoomViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
+    }
+    @IBAction func exitChat(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: {});
     }
     
 
@@ -55,9 +59,4 @@ class RoomViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.chatView.reloadData()
         }
     }
-
-  
-    
-    
-
 }
