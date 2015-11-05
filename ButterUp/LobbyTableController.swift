@@ -73,7 +73,7 @@ class LobbyTableController: UITableViewController {
     
     func goRoom (sender: UIButton) {
         print("going to room")
-        let tabViewController = self.storyboard!.instantiateViewControllerWithIdentifier("room") as! ChatViewController
+        let tabViewController = self.storyboard!.instantiateViewControllerWithIdentifier("realRoom") as! RoomViewController
         
         let button = sender as!
         UIButton
@@ -92,7 +92,7 @@ class LobbyTableController: UITableViewController {
             var u = user.getUser()
 ////            getting the number of which room is actually getting chose
 //            tabViewController.roomID = u["avatars"][curravatarID]["rooms"]["1"]["roomID"].string!
-//            print(u["avatars"][curravatarID]["rooms"]["1"]["roomID"], "this is what i want to print")
+//            print(u["avatars"][curravatarID]["rooms"]["1"]["roomID"], "this is what i want to print") -> getting roomID to pass to roomviewcontroller
 //           
            
         }
@@ -129,7 +129,8 @@ class LobbyTableController: UITableViewController {
                 var opponent = subJson["opponentName"]
                 joinRoom.setTitle(subJson["roomID"].string, forState: UIControlState.Normal)
                 label.text = opponent.string
-//             atach value to button to see which id got picked
+//             atach value to button to see which id got picked -> send roomID to cha view
+//                and make get/post to rooms/:roomID to get all the messages
                 print(subJson["roomID"])
             }
             

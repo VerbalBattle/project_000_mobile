@@ -155,7 +155,7 @@
         <!--Item-->
         <scene sceneID="YCn-u7-Cuw">
             <objects>
-                <viewController id="ilx-ma-h9t" customClass="RoomViewController" customModule="ButterUp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="realRoom" id="ilx-ma-h9t" customClass="RoomViewController" customModule="ButterUp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jFz-0K-taA"/>
                         <viewControllerLayoutGuide type="bottom" id="WAI-da-pIS"/>

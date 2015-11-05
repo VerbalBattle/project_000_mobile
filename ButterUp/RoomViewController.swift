@@ -14,6 +14,8 @@ class RoomViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var input: UITextField!
     @IBOutlet weak var chatView: UITableView!
     var messages = ["bow", "simon", "zack"]
+    var id: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.chatView.delegate = self
