@@ -22,10 +22,12 @@
 		655F3D401BE420990031D9C7 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655F3D3F1BE420990031D9C7 /* UserViewController.swift */; };
 		655F3D421BE425A30031D9C7 /* AvatarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655F3D411BE425A30031D9C7 /* AvatarViewController.swift */; };
 		655F3D441BE428AA0031D9C7 /* AvatarDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655F3D431BE428AA0031D9C7 /* AvatarDisplayView.swift */; };
-		659ABFC51BE88FEF00F4FCA8 /* chatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659ABFC41BE88FEF00F4FCA8 /* chatController.swift */; };
+		659ABFC51BE88FEF00F4FCA8 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659ABFC41BE88FEF00F4FCA8 /* ChatViewController.swift */; };
 		659ABFC71BE8966200F4FCA8 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659ABFC61BE8966200F4FCA8 /* Match.swift */; };
 		659ABFC91BE899C900F4FCA8 /* config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659ABFC81BE899C900F4FCA8 /* config.swift */; };
+		65B9E6831BEB330500EC6277 /* MessageRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B9E6821BEB330500EC6277 /* MessageRequests.swift */; };
 		65D087781BEA818000CDEF1C /* MessageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D087771BEA818000CDEF1C /* MessageRequest.swift */; };
+		65D7549B1BEB3F840096121A /* RoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D7549A1BEB3F840096121A /* RoomViewController.swift */; };
 		65DB4F881BE749B10079BD93 /* LobbyTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DB4F871BE749B10079BD93 /* LobbyTableController.swift */; };
 		65DB4F8A1BE7DF0D0079BD93 /* AvatarRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DB4F891BE7DF0D0079BD93 /* AvatarRequests.swift */; };
 		65E13C781BE29CD2004C4C75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E13C771BE29CD2004C4C75 /* AppDelegate.swift */; };
@@ -64,12 +66,14 @@
 		655F3D3F1BE420990031D9C7 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		655F3D411BE425A30031D9C7 /* AvatarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarViewController.swift; sourceTree = "<group>"; };
 		655F3D431BE428AA0031D9C7 /* AvatarDisplayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarDisplayView.swift; sourceTree = "<group>"; };
-		659ABFC41BE88FEF00F4FCA8 /* chatController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = chatController.swift; sourceTree = "<group>"; };
+		659ABFC41BE88FEF00F4FCA8 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		659ABFC61BE8966200F4FCA8 /* Match.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 		659ABFC81BE899C900F4FCA8 /* config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = config.swift; sourceTree = "<group>"; };
+		65B9E6821BEB330500EC6277 /* MessageRequests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageRequests.swift; sourceTree = "<group>"; };
 		65C74BAC1BE43F7D0073C4BA /* ButterUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ButterUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65C74BAD1BE43F7D0073C4BA /* ButterUpTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ButterUpTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		65D087771BEA818000CDEF1C /* MessageRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageRequest.swift; sourceTree = "<group>"; };
+		65D7549A1BEB3F840096121A /* RoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomViewController.swift; sourceTree = "<group>"; };
 		65DB4F871BE749B10079BD93 /* LobbyTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LobbyTableController.swift; sourceTree = "<group>"; };
 		65DB4F891BE7DF0D0079BD93 /* AvatarRequests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarRequests.swift; sourceTree = "<group>"; };
 		65E13C761BE29CD2004C4C75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -113,6 +117,7 @@
 				655F3D3A1BE3DA310031D9C7 /* Avatar.swift */,
 				650A3E381BE867870049C7D2 /* UserRequests.swift */,
 				65DB4F891BE7DF0D0079BD93 /* AvatarRequests.swift */,
+				65B9E6821BEB330500EC6277 /* MessageRequests.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -129,8 +134,9 @@
 				655F3D431BE428AA0031D9C7 /* AvatarDisplayView.swift */,
 				655F3D3D1BE3F31D0031D9C7 /* LoginViewController.swift */,
 				65DB4F871BE749B10079BD93 /* LobbyTableController.swift */,
-				659ABFC41BE88FEF00F4FCA8 /* chatController.swift */,
+				659ABFC41BE88FEF00F4FCA8 /* ChatViewController.swift */,
 				65362E9A1BEA934E0035A476 /* EditAvatarViewController.swift */,
+				65D7549A1BEB3F840096121A /* RoomViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -354,10 +360,12 @@
 				65E13C781BE29CD2004C4C75 /* AppDelegate.swift in Sources */,
 				650A3E391BE867870049C7D2 /* UserRequests.swift in Sources */,
 				650A95611BE48A5B000556BD /* MessageViewController.swift in Sources */,
+				65D7549B1BEB3F840096121A /* RoomViewController.swift in Sources */,
 				6514BEE81BE9AC5F00EE4696 /* SettingsViewController.swift in Sources */,
-				659ABFC51BE88FEF00F4FCA8 /* chatController.swift in Sources */,
+				659ABFC51BE88FEF00F4FCA8 /* ChatViewController.swift in Sources */,
 				65EFC67D1BE82C7400C44AD9 /* SignupViewController.swift in Sources */,
 				655F3D3C1BE3DA310031D9C7 /* Avatar.swift in Sources */,
+				65B9E6831BEB330500EC6277 /* MessageRequests.swift in Sources */,
 				65DB4F881BE749B10079BD93 /* LobbyTableController.swift in Sources */,
 				655F3D401BE420990031D9C7 /* UserViewController.swift in Sources */,
 				659ABFC91BE899C900F4FCA8 /* config.swift in Sources */,
