@@ -78,7 +78,7 @@ class RoomViewController: UIViewController, UITableViewDataSource, UITableViewDe
         } else {
             print("no image av")
         }
-        var timer = NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: "updateRoom", userInfo: nil, repeats: true)
+        var timer = NSTimer.scheduledTimerWithTimeInterval(3, target: self, selector: "updateRoom", userInfo: nil, repeats: true)
         print("oppimage is the value we want", self.oppImage)
         print("socket event")
         socket.on("connect") {data, ack in
