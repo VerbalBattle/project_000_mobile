@@ -18,6 +18,7 @@ class LobbyTableController: UITableViewController {
     var avatarID: [String] = []
     var avatarHandler = AvatarRequests()
     var buser = User()
+    var roomIDs:[String] = []
 
     var request = AvatarRequests()
     
@@ -66,7 +67,6 @@ class LobbyTableController: UITableViewController {
                
                 avatarHandler.matchMaking(Int(curravatarID)! , elo: elo, type: type!, winloss: winLossRatio, winStreak: winStr!)
             }
-            
         }
         
     }
@@ -135,7 +135,8 @@ class LobbyTableController: UITableViewController {
         let avatarName = UILabel(frame: CGRect(x:20, y:20, width:200, height:60))
         let aboutMe = UILabel(frame: CGRect(x:20, y:20, width:200, height:120))
         let makeMatch = UIButton(frame: CGRect(x:180, y:40, width:140, height:60))
-        let goToRoom = UIButton(frame: CGRect(x:30, y:100, width:140, height:30))
+        var yCor : Int = 90
+        let goToRoom = UIButton(frame: CGRect(x:30, y:yCor, width:140, height:30))
 
         makeMatch.addTarget(self, action: "matchmaking:", forControlEvents: .TouchUpInside)
         goToRoom.addTarget(self, action: "goRoom:", forControlEvents: .TouchUpInside)
@@ -159,10 +160,13 @@ class LobbyTableController: UITableViewController {
             imageV.image = image
             var rooms = lab["rooms"]
            
-            
+          
             for (key,subJson):(String, JSON) in rooms {
 //                 avatarName.text = subJson["roomID"].string
+                print("the sub json is", subJson)
                 var opponent = subJson["opponentName"]
+                print("id is here", subJson["roomID"])
+               
                 
                 label.text = opponent.string
                 print(subJson["roomID"].string, "roomID")
@@ -172,9 +176,17 @@ class LobbyTableController: UITableViewController {
                 print("key is", key)
                 if key != "null" {
                 goToRoom.setTitle(key, forState: UIControlState.Normal)
-                    cell.addSubview(goToRoom)
-                }
+//                cell.addSubview(goToRoom)
+//                    add button here with incrementing coordinates
+                print("appending gotoroom", key, yCor)
+                    
+                print("button check coords", goToRoom)
+//                    appending button of multi room to cell
+                goToRoom.center.y -= 25
+                cell.addSubview(goToRoom)
             }
+        }
+            print(self.roomIDs)
 //            cell.addSubview(joinRoom)
             cell.addSubview(label)
             cell.addSubview(aboutMe)
