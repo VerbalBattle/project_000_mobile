@@ -106,6 +106,26 @@ class LobbyTableController: UITableViewController {
         
     
 }
+    
+    
+    func convertBase64ToImage(base64String: String) -> UIImage {
+        let decodedData = NSData(base64EncodedString: base64String, options: NSDataBase64DecodingOptions(rawValue: 0) )
+        let decodedimage = UIImage(data: decodedData!)
+        return decodedimage!
+    }
+    
+    
+    func validUrl(invalid: String) -> UIImage {
+        var imageBinary = ""
+        if(invalid == "data:," || invalid == "data:image/png;base64," || invalid == "") {
+            imageBinary = "R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+            
+        } else {
+            imageBinary = String(invalid.characters.split {$0 == ","}[1])
+        }
+        return convertBase64ToImage(imageBinary)
+    }
+    
 
        
 
@@ -130,11 +150,15 @@ class LobbyTableController: UITableViewController {
         
         if let lab = self.avatar[avatarID[indexPath.row]] {
             avatarName.text = lab["avatarName"].string
-            makeMatch.setTitle("Match " + avatarName.text! , forState:UIControlState.Normal)
+            makeMatch.setTitle("Match " + avatarName.text! , forState: UIControlState.Normal)
             aboutMe.text = lab["aboutMe"].string
-            print("lab", lab)
+            var imagesource = lab["imageSource"]
+            var image = validUrl(imagesource.string!)
+            print("image is", image)
+            var imageV = UIImageView(frame: CGRect(x:140, y:15, width:20, height:20))
+            imageV.image = image
             var rooms = lab["rooms"]
-            print(rooms)
+           
             
             for (key,subJson):(String, JSON) in rooms {
 //                 avatarName.text = subJson["roomID"].string
@@ -156,6 +180,7 @@ class LobbyTableController: UITableViewController {
             cell.addSubview(aboutMe)
             cell.addSubview(avatarName)
             cell.addSubview(makeMatch)
+            cell.addSubview(imageV)
       }
         return cell
     }
