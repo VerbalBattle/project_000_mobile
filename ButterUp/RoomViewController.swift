@@ -130,16 +130,21 @@ class RoomViewController: UIViewController, UITableViewDataSource, UITableViewDe
         imageView.layer.cornerRadius = imageView.frame.height/2
     if String(self.ids[indexPath.row]) == self.avatarID {
         cell.addSubview(imageView)
-//    
-        var oppImage = validUrl(self.imageData)
-        let oppView = UIImageView(frame: CGRect(x:70, y:5, width:70, height:70))
-        oppView.image = oppImage
-        cell.addSubview(oppView)
+////    
+//        var oppImage = validUrl(self.imageData)
+//        let oppView = UIImageView(frame: CGRect(x:70, y:5, width:70, height:70))
+//        oppView.image = oppImage
+//        cell.addSubview(oppView)
+//        print("curretnsource", self.currentSource)
     } else {
     
     if  oppImageAv {
         print("it is here yeihhh")
 //        append opponent image to cell
+        var image = validUrl(self.imageData)
+        var view = UIImageView(frame: CGRect(x:70, y:5, width:70, height:70))
+        view.image = image
+        cell.addSubview(view)
         
     } else {
         print("oh no its not here", self.imageData)
