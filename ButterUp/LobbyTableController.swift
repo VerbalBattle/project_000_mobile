@@ -115,7 +115,7 @@ class LobbyTableController: UITableViewController {
         let avatarName = UILabel(frame: CGRect(x:20, y:20, width:200, height:60))
         let aboutMe = UILabel(frame: CGRect(x:20, y:20, width:200, height:120))
         let makeMatch = UIButton(frame: CGRect(x:180, y:40, width:140, height:60))
-        let goToRoom = UIButton(frame: CGRect(x:30, y:40, width:140, height:30))
+        let goToRoom = UIButton(frame: CGRect(x:30, y:100, width:140, height:30))
 
         makeMatch.addTarget(self, action: "matchmaking:", forControlEvents: .TouchUpInside)
         goToRoom.addTarget(self, action: "goRoom:", forControlEvents: .TouchUpInside)
@@ -124,12 +124,13 @@ class LobbyTableController: UITableViewController {
 //        button.setTitle("Make Match", forState: UIControlState.Normal)
         makeMatch.backgroundColor = UIColor.greenColor()
         goToRoom.backgroundColor = UIColor.blueColor()
+        
 
         var label = UILabel(frame: CGRect(x:280, y:40, width:140, height:60))
         
         if let lab = self.avatar[avatarID[indexPath.row]] {
             avatarName.text = lab["avatarName"].string
-           
+            makeMatch.setTitle("Match " + avatarName.text! , forState:UIControlState.Normal)
             aboutMe.text = lab["aboutMe"].string
             var rooms = lab["rooms"]
             print(rooms)
@@ -142,14 +143,17 @@ class LobbyTableController: UITableViewController {
                 print(subJson["roomID"].string, "roomID")
 //                does not get added to button as value -> maybe because not av sometimes
 //                getting real roomID instead of hard coded one
-//                only append button when rooms actually exists 
+//                only append button when rooms actually exists
+                print("key is", key)
+                if key != "null" {
                 goToRoom.setTitle(key, forState: UIControlState.Normal)
+                    cell.addSubview(goToRoom)
+                }
             }
 //            cell.addSubview(joinRoom)
             cell.addSubview(label)
             cell.addSubview(aboutMe)
             cell.addSubview(avatarName)
-            cell.addSubview(goToRoom)
             cell.addSubview(makeMatch)
       }
         return cell
