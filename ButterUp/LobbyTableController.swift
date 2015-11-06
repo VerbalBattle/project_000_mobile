@@ -114,48 +114,43 @@ class LobbyTableController: UITableViewController {
         let cell = UITableViewCell()
         let avatarName = UILabel(frame: CGRect(x:20, y:20, width:200, height:60))
         let aboutMe = UILabel(frame: CGRect(x:20, y:20, width:200, height:120))
-        let button = UIButton(frame: CGRect(x:180, y:40, width:140, height:60))
-        button.addTarget(self, action: "matchmaking:", forControlEvents: .TouchUpInside)
+        let makeMatch = UIButton(frame: CGRect(x:180, y:40, width:140, height:60))
+        let goToRoom = UIButton(frame: CGRect(x:30, y:40, width:140, height:30))
+
+        makeMatch.addTarget(self, action: "matchmaking:", forControlEvents: .TouchUpInside)
+        goToRoom.addTarget(self, action: "goRoom:", forControlEvents: .TouchUpInside)
+
         
 //        button.setTitle("Make Match", forState: UIControlState.Normal)
-        button.backgroundColor = UIColor.greenColor()
-        cell.addSubview(button)
+        makeMatch.backgroundColor = UIColor.greenColor()
+        goToRoom.backgroundColor = UIColor.blueColor()
+
         var label = UILabel(frame: CGRect(x:280, y:40, width:140, height:60))
-        var joinRoom = UIButton(frame: CGRect(x:140, y:40, width:140, height:60))
-        joinRoom.backgroundColor = UIColor.blueColor()
-        button.addTarget(self, action: "goRoom:", forControlEvents: .TouchUpInside)
         
         if let lab = self.avatar[avatarID[indexPath.row]] {
             avatarName.text = lab["avatarName"].string
            
             aboutMe.text = lab["aboutMe"].string
             var rooms = lab["rooms"]
+            print(rooms)
             
             for (key,subJson):(String, JSON) in rooms {
-//
 //                 avatarName.text = subJson["roomID"].string
                 var opponent = subJson["opponentName"]
-                joinRoom.setTitle(subJson["roomID"].string, forState: UIControlState.Normal)
-                label.text = opponent.string
-//             atach value to button to see which id got picked -> send roomID to cha view
-//                and make get/post to rooms/:roomID to get all the messages
-                print(subJson["roomID"], "this is the reak roomsid")
-//                does not get added to button as value -> maybe because not av sometimes
                 
+                label.text = opponent.string
+                print(subJson["roomID"].string, "roomID")
+//                does not get added to button as value -> maybe because not av sometimes
 //                getting real roomID instead of hard coded one
-                  button.setTitle("3", forState: UIControlState.Normal)
-                joinRoom.setTitle(subJson["roomID"].string, forState: UIControlState.Normal)
+//                only append button when rooms actually exists 
+                goToRoom.setTitle(key, forState: UIControlState.Normal)
             }
-            
-            
-            
-          
 //            cell.addSubview(joinRoom)
             cell.addSubview(label)
             cell.addSubview(aboutMe)
             cell.addSubview(avatarName)
-            
-            
+            cell.addSubview(goToRoom)
+            cell.addSubview(makeMatch)
       }
         return cell
     }

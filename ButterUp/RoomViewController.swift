@@ -19,14 +19,37 @@ class RoomViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var chatView: UITableView!
     var messages: [String] = []
     var ids: [Int] = []
+   
     var avatarID: String = ""
     var roomID: String = ""
+    var currentSource: String = ""
     var room = RoomRequest()
+    var user = User()
+    
+    
+    
+    func convertBase64ToImage(base64String: String) -> UIImage {
+        let decodedData = NSData(base64EncodedString: base64String, options: NSDataBase64DecodingOptions(rawValue: 0) )
+        let decodedimage = UIImage(data: decodedData!)
+        return decodedimage!
+    }
+
+    
+    func validUrl(invalid: String) -> UIImage {
+        var imageBinary = ""
+        if(invalid == "data:," || invalid == "data:image/png;base64," || invalid == "") {
+            imageBinary = "R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+            
+        } else {
+            imageBinary = String(invalid.characters.split {$0 == ","}[1])
+        }
+        return convertBase64ToImage(imageBinary)
+    }
     
     
     func processMessages(messages:[(String,JSON)]) {
 //        get imagess from avatars here
-        print("messages",messages)
+        
         for oneMessage in messages {
             self.messages.append(oneMessage.1["message"].string!)
             self.ids.append(oneMessage.1["avatarID"].int!)
@@ -38,7 +61,10 @@ class RoomViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("makgin request to rooms", self.roomID)
+        self.currentSource = user.getUser()["avatars"][self.avatarID]["imageSource"].string!
+        print(validUrl(self.currentSource))
+   
+
         room.getMessages(self.roomID, callback: processMessages)
         self.chatView.delegate = self
         self.chatView.dataSource = self
@@ -71,11 +97,17 @@ class RoomViewController: UIViewController, UITableViewDataSource, UITableViewDe
          info.text = String(self.ids[indexPath.row])
 //        cell.addSubview(from)
          cell.addSubview(info)
+        var profile = validUrl(self.currentSource)
+        var imageView = UIImageView(frame: CGRect(x:70, y:5, width:70, height:70))
+        imageView.image = profile
+        imageView.layer.borderColor = UIColor.blackColor().CGColor
+        imageView.layer.cornerRadius = imageView.frame.height/2
+        cell.addSubview(imageView)
         return cell
     }
     
    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 100
+        return 150
     }
     
     
