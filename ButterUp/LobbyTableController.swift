@@ -135,7 +135,7 @@ class LobbyTableController: UITableViewController {
         let avatarName = UILabel(frame: CGRect(x:20, y:20, width:200, height:60))
         let aboutMe = UILabel(frame: CGRect(x:20, y:20, width:200, height:120))
         let makeMatch = UIButton(frame: CGRect(x:180, y:40, width:140, height:60))
-        var yCor : Int = 90
+        var yCor : CGFloat = 90
         let goToRoom = UIButton(frame: CGRect(x:30, y:yCor, width:140, height:30))
 
         makeMatch.addTarget(self, action: "matchmaking:", forControlEvents: .TouchUpInside)
@@ -182,7 +182,7 @@ class LobbyTableController: UITableViewController {
                     
                 print("button check coords", goToRoom)
 //                    appending button of multi room to cell
-                goToRoom.center.y -= 25
+      
                 cell.addSubview(goToRoom)
             }
         }
@@ -200,7 +200,7 @@ class LobbyTableController: UITableViewController {
     
     // UITableViewDelegate Functions
         override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-            return 150
+            return 200
         }
     
     

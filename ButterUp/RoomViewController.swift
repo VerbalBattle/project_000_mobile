@@ -24,6 +24,9 @@ class RoomViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var avatarID: String = ""
     var roomID: String = ""
     var currentSource: String = ""
+    var oppImage: String = ""
+    var oppImageAv: Bool = false
+    var imageData: String = ""
     var room = RoomRequest()
     var user = User()
     
@@ -49,7 +52,8 @@ class RoomViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func processMessages(messages:[(String,JSON)]) {
 //        get imagess from avatars here
-        
+        print("new messages", messages)
+        self.messages = []
         for oneMessage in messages {
             self.messages.append(oneMessage.1["message"].string!)
             self.ids.append(oneMessage.1["avatarID"].int!)
@@ -59,14 +63,30 @@ class RoomViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
     }
     
+    func updateRoom() {
+        print("updatig rooms")
+        room.getMessages(self.roomID, callback: processMessages)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("all room data is here", user.getUser()["avatars"][self.avatarID]["rooms"][self.roomID]["opponentImage"])
+        self.imageData = user.getUser()["avatars"][self.avatarID]["rooms"][self.roomID]["opponentImage"].string!
+        if imageData != "data:,"{
+            print("image here")
+            oppImageAv = true
+        } else {
+            print("no image av")
+        }
+        var timer = NSTimer.scheduledTimerWithTimeInterval(7, target: self, selector: "updateRoom", userInfo: nil, repeats: true)
+        print("oppimage is the value we want", self.oppImage)
         print("socket event")
         socket.on("connect") {data, ack in
             print("socket connected")
-        }
-        socket.on("client:turnUpdate") {data, ack in
+        
+        self.socket.on("client:turnUpdate") {data, ack in
             print(data, "message form otehr client")
+         }
         }
         socket.connect()
         
@@ -96,8 +116,7 @@ class RoomViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let cell = UITableViewCell()
         let label = UILabel(frame: CGRect(x:20, y:20, width:200, height:50))
         label.text = self.messages[indexPath.row]
-        print("hello", self.messages[indexPath.row])
-//        var from  = UILabel(frame: CGRect(x:20, y:50, width:200, height:50))
+       //        var from  = UILabel(frame: CGRect(x:20, y:50, width:200, height:50))
 //        from.text = self.ids[indexPath.row]
         cell.addSubview(label)
         let info = UILabel(frame: CGRect(x:20, y:40, width:200, height:50))
@@ -111,6 +130,20 @@ class RoomViewController: UIViewController, UITableViewDataSource, UITableViewDe
         imageView.layer.cornerRadius = imageView.frame.height/2
     if String(self.ids[indexPath.row]) == self.avatarID {
         cell.addSubview(imageView)
+//    
+        var oppImage = validUrl(self.imageData)
+        let oppView = UIImageView(frame: CGRect(x:70, y:5, width:70, height:70))
+        oppView.image = oppImage
+        cell.addSubview(oppView)
+    } else {
+    
+    if  oppImageAv {
+        print("it is here yeihhh")
+//        append opponent image to cell
+        
+    } else {
+        print("oh no its not here", self.imageData)
+    }
     }
         return cell
     }
@@ -126,7 +159,9 @@ class RoomViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         if inp! != ""{
         room.postMessage(self.roomID, message: inp!, avID: self.avatarID)
-        //self.messages.append(inp!)
+//        self.messages.append(inp!)
+////        var id = String(self.avatarID)
+//        self.ids.append(Int(self.avatarID)!)
         self.chatView.reloadData()
         }
     }
