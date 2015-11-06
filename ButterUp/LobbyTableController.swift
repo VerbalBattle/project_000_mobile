@@ -141,7 +141,9 @@ class LobbyTableController: UITableViewController {
 //                and make get/post to rooms/:roomID to get all the messages
                 print(subJson["roomID"], "this is the reak roomsid")
 //                does not get added to button as value -> maybe because not av sometimes
-                  button.setTitle("1", forState: UIControlState.Normal)
+                
+//                getting real roomID instead of hard coded one
+                  button.setTitle("3", forState: UIControlState.Normal)
                 joinRoom.setTitle(subJson["roomID"].string, forState: UIControlState.Normal)
             }
             

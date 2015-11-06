@@ -15,7 +15,9 @@ class VoteController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var vote2: UIButton!
     @IBOutlet weak var vote1: UIButton!
     @IBOutlet weak var voteView: UITableView!
-    
+    var rooms = VoteRequest()
+//    sample roomID
+    var roomID: String =  "3"
     
     func fillView () {
         
@@ -26,6 +28,7 @@ class VoteController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         self.voteView.delegate = self
         self.voteView.dataSource = self
+        rooms.getClosedRoom()
     }
     
     override func didReceiveMemoryWarning() {
@@ -53,4 +56,14 @@ class VoteController: UIViewController, UITableViewDataSource, UITableViewDelega
         return 100
     }
     
+    
+    
+    @IBAction func upvotePlayer1(sender: AnyObject) {
+        rooms.upvoteAvatar("1", roomID: self.roomID)
+    }
+    
+    
+    @IBAction func upvotePlayer2(sender: AnyObject) {
+        rooms.upvoteAvatar("2", roomID: self.roomID)
+    }
 }

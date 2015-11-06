@@ -23,6 +23,7 @@
 		655F3D421BE425A30031D9C7 /* AvatarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655F3D411BE425A30031D9C7 /* AvatarViewController.swift */; };
 		655F3D441BE428AA0031D9C7 /* AvatarDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655F3D431BE428AA0031D9C7 /* AvatarDisplayView.swift */; };
 		656632551BEC11960011FA41 /* VoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656632541BEC11960011FA41 /* VoteController.swift */; };
+		656632571BEC15C50011FA41 /* VoteRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656632561BEC15C50011FA41 /* VoteRequest.swift */; };
 		65765BD21BEBED2600E47451 /* RoomRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65765BD11BEBED2600E47451 /* RoomRequest.swift */; };
 		659ABFC51BE88FEF00F4FCA8 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659ABFC41BE88FEF00F4FCA8 /* ChatViewController.swift */; };
 		659ABFC71BE8966200F4FCA8 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659ABFC61BE8966200F4FCA8 /* Match.swift */; };
@@ -69,6 +70,7 @@
 		655F3D411BE425A30031D9C7 /* AvatarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarViewController.swift; sourceTree = "<group>"; };
 		655F3D431BE428AA0031D9C7 /* AvatarDisplayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarDisplayView.swift; sourceTree = "<group>"; };
 		656632541BEC11960011FA41 /* VoteController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoteController.swift; sourceTree = "<group>"; };
+		656632561BEC15C50011FA41 /* VoteRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoteRequest.swift; sourceTree = "<group>"; };
 		65765BD11BEBED2600E47451 /* RoomRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomRequest.swift; sourceTree = "<group>"; };
 		659ABFC41BE88FEF00F4FCA8 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		659ABFC61BE8966200F4FCA8 /* Match.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				655F3D3A1BE3DA310031D9C7 /* Avatar.swift */,
 				650A3E381BE867870049C7D2 /* UserRequests.swift */,
 				65DB4F891BE7DF0D0079BD93 /* AvatarRequests.swift */,
+				656632561BEC15C50011FA41 /* VoteRequest.swift */,
 				65B9E6821BEB330500EC6277 /* MessageRequests.swift */,
 			);
 			name = Models;
@@ -356,6 +359,7 @@
 				655F3D3E1BE3F31D0031D9C7 /* LoginViewController.swift in Sources */,
 				65E13C7A1BE29CD2004C4C75 /* ViewController.swift in Sources */,
 				659ABFC71BE8966200F4FCA8 /* Match.swift in Sources */,
+				656632571BEC15C50011FA41 /* VoteRequest.swift in Sources */,
 				655F3D361BE3DA150031D9C7 /* Message.swift in Sources */,
 				655F3D381BE3DA150031D9C7 /* User.swift in Sources */,
 				65DB4F8A1BE7DF0D0079BD93 /* AvatarRequests.swift in Sources */,

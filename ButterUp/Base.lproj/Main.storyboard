@@ -201,12 +201,18 @@
                                 <state key="normal" title="Player 1">
                                     <color key="titleColor" red="0.65300561091601272" green="0.91350133458642979" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="upvotePlayer1:" destination="6oW-2k-aeS" eventType="touchUpInside" id="yDU-Q6-0pd"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kzh-Dl-ekr">
                                 <rect key="frame" x="220" y="449" width="55" height="30"/>
                                 <state key="normal" title="Player 2">
                                     <color key="titleColor" red="0.62555965293882521" green="0.94107139449861943" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="upvotePlayer2:" destination="6oW-2k-aeS" eventType="touchUpInside" id="UFD-8c-M8H"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Vote for your favorite" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NRj-Ak-FuZ">
                                 <rect key="frame" x="60" y="420" width="161" height="21"/>

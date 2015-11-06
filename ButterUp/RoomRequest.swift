@@ -26,16 +26,19 @@ class RoomRequest {
         //     "avatarID": 23,
         //     "message": "my message is here"
         
-        var params = [
+        var avatarID = Int(avID)
+        var params:[String: AnyObject] = [
             "message": message,
-            "avatarID": avID
+            "avatarID": avatarID!
         ]
         
-        Alamofire.request(.POST, URL, headers: headers,parameters: params, encoding: .JSON)
+        Alamofire.request(.POST, URL, headers: headers,parameters: params, encoding: .JSON).responseJSON { response in
+            print(response)
+        }
         
     }
     
-    func getMessages(roomID: String, callback:([String:JSON])->Void) {
+    func getMessages(roomID: String, callback: ([(String,JSON)])->Void) {
         
         let URL =  url + "/rooms/" + roomID
         let headers = ["Authorization": "bearer \(token)"]
@@ -43,14 +46,14 @@ class RoomRequest {
         Alamofire.request(.GET, URL, headers: headers, encoding: .JSON)
             .responseJSON { response in
                 if let messages = response.result.value {
-                    print(response)
                     let json = JSON(messages)
                     var messages = json["rooms"][roomID]["messages"]
                     var messageDict:[String:JSON] = [:]
                     for (key,oneMessage):(String, JSON) in messages {
                         messageDict[key] = oneMessage
                     }
-                    callback(messageDict)
+                    var sortedTuple = messageDict.sort{$0.0 < $1.0}
+                    callback(sortedTuple)
                 }
 
         }
