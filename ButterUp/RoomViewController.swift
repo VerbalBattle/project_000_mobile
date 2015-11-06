@@ -78,7 +78,7 @@ class RoomViewController: UIViewController, UITableViewDataSource, UITableViewDe
         } else {
             print("no image av")
         }
-        var timer = NSTimer.scheduledTimerWithTimeInterval(7, target: self, selector: "updateRoom", userInfo: nil, repeats: true)
+        var timer = NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: "updateRoom", userInfo: nil, repeats: true)
         print("oppimage is the value we want", self.oppImage)
         print("socket event")
         socket.on("connect") {data, ack in
@@ -118,6 +118,7 @@ class RoomViewController: UIViewController, UITableViewDataSource, UITableViewDe
         label.text = self.messages[indexPath.row]
        //        var from  = UILabel(frame: CGRect(x:20, y:50, width:200, height:50))
 //        from.text = self.ids[indexPath.row]
+    
         cell.addSubview(label)
         let info = UILabel(frame: CGRect(x:20, y:40, width:200, height:50))
         info.text = String(self.ids[indexPath.row])
