@@ -132,6 +132,7 @@ class LobbyTableController: UITableViewController {
             avatarName.text = lab["avatarName"].string
             makeMatch.setTitle("Match " + avatarName.text! , forState:UIControlState.Normal)
             aboutMe.text = lab["aboutMe"].string
+            print("lab", lab)
             var rooms = lab["rooms"]
             print(rooms)
             

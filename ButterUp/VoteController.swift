@@ -17,7 +17,7 @@ class VoteController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var voteView: UITableView!
     var rooms = VoteRequest()
 //    sample roomID
-    var roomID: String =  "3"
+    var roomID: String =  ""
     
     func fillView () {
         
@@ -28,6 +28,7 @@ class VoteController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         self.voteView.delegate = self
         self.voteView.dataSource = self
+        print("getting closed room")
         rooms.getClosedRoom()
     }
     

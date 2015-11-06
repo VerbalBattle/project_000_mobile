@@ -102,7 +102,9 @@ class RoomViewController: UIViewController, UITableViewDataSource, UITableViewDe
         imageView.image = profile
         imageView.layer.borderColor = UIColor.blackColor().CGColor
         imageView.layer.cornerRadius = imageView.frame.height/2
+    if String(self.ids[indexPath.row]) == self.avatarID {
         cell.addSubview(imageView)
+    }
         return cell
     }
     

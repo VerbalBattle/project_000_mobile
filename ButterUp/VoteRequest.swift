@@ -18,10 +18,11 @@ class VoteRequest {
     func getClosedRoom () {
         
         let URL =  url + "/judging"
-        
+        print("making get to judging")
         let header = ["Authorization": "bearer \(token)"]
         print("if last thing here then no closed rooms")
         Alamofire.request(.GET, URL, headers:header).responseJSON { response in
+            print(response)
             if let closedRooms = response.result.value {
                 print("closed rooms:", closedRooms)
             }
