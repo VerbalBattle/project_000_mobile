@@ -106,7 +106,7 @@ class UserViewController: UITableViewController {
         let avatarName = UILabel(frame: CGRect(x:20, y:20, width:200, height:50))
         let aboutMe = UILabel(frame: CGRect(x:20, y:20, width:200, height:120))
         var image = UIImage()
-        let imageView = UIImageView(frame: CGRect(x:70, y:100, width:100, height:100))
+        let imageView = UIImageView(frame: CGRect(x:85, y:115, width:100, height:100))
        
         let deleteButton = UIButton(frame: CGRect(x:110, y:40, width:80, height:60))
         let editButton = UIButton(frame: CGRect(x:220, y:40, width:80, height:60) )
