@@ -176,6 +176,18 @@ class LobbyTableController: UITableViewController {
                 print("key is", key)
                 if key != "null" {
                 goToRoom.setTitle(key, forState: UIControlState.Normal)
+                var roomWith = subJson["opponentName"].string!
+                var enemyLabel = UILabel(frame: CGRect(x:50, y:140, width:200, height:25))
+                enemyLabel.text = "In a room with:" + roomWith
+                var str =  subJson["opponentImage"].string
+                  
+                var image =  validUrl(str!)
+                var view = UIImageView(frame: CGRect(x:50, y:160, width:200, height:25))
+                view.image = image
+                print("adding opp image", view, str)
+                cell.addSubview(view)
+                
+                cell.addSubview(enemyLabel)
 //                cell.addSubview(goToRoom)
 //                    add button here with incrementing coordinates
                 print("appending gotoroom", key, yCor)

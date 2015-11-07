@@ -52,10 +52,11 @@ class RoomViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func processMessages(messages:[(String,JSON)]) {
 //        get imagess from avatars here
-        print("new messages", messages)
+       
         self.messages = []
         for oneMessage in messages {
             self.messages.append(oneMessage.1["message"].string!)
+            print("name are", oneMessage.1)
             self.ids.append(oneMessage.1["avatarID"].int!)
         }
          self.chatView.reloadData()
@@ -114,18 +115,20 @@ class RoomViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) ->   UITableViewCell {
         let cell = UITableViewCell()
-        let label = UILabel(frame: CGRect(x:20, y:20, width:200, height:50))
+    
+    
+        let label = UILabel(frame: CGRect(x:20, y:10, width:200, height:50))
         label.text = self.messages[indexPath.row]
        //        var from  = UILabel(frame: CGRect(x:20, y:50, width:200, height:50))
 //        from.text = self.ids[indexPath.row]
     
         cell.addSubview(label)
-        let info = UILabel(frame: CGRect(x:20, y:40, width:200, height:50))
+        let info = UILabel(frame: CGRect(x:20, y:30, width:200, height:50))
         info.text = String(self.ids[indexPath.row])
 //        cell.addSubview(from)
         cell.addSubview(info)
         let profile = validUrl(self.currentSource)
-        let imageView = UIImageView(frame: CGRect(x:70, y:5, width:70, height:70))
+        let imageView = UIImageView(frame: CGRect(x:70, y:65, width:70, height:70))
         imageView.image = profile
         imageView.layer.borderColor = UIColor.blackColor().CGColor
         imageView.layer.cornerRadius = imageView.frame.height/2
@@ -143,13 +146,13 @@ class RoomViewController: UIViewController, UITableViewDataSource, UITableViewDe
         print("it is here yeihhh")
 //        append opponent image to cell
         var image = validUrl(self.imageData)
-        var view = UIImageView(frame: CGRect(x:70, y:5, width:70, height:70))
+        var view = UIImageView(frame: CGRect(x:70, y:65, width:70, height:70))
         view.image = image
         cell.addSubview(view)
         
-    } else {
-        print("oh no its not here", self.imageData)
     }
+      
+    
     }
         return cell
     }
