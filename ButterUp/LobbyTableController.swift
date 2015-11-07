@@ -156,8 +156,16 @@ class LobbyTableController: UITableViewController {
             var imagesource = lab["imageSource"]
             var image = validUrl(imagesource.string!)
             print("image is", image)
-            var imageV = UIImageView(frame: CGRect(x:140, y:15, width:20, height:20))
+            var imageV = UIImageView(frame: CGRect(x:140, y:15, width:70, height:70))
             imageV.image = image
+            
+            imageV.layer.cornerRadius = imageV.frame.height/2
+            imageV.layer.borderWidth = 1.0
+            imageV.layer.masksToBounds = false
+            imageV.layer.borderColor = UIColor.whiteColor().CGColor
+            imageV.clipsToBounds = true
+
+            print("rounded image")
             var rooms = lab["rooms"]
            
           
@@ -189,8 +197,15 @@ class LobbyTableController: UITableViewController {
                     }
                   
                 var image =  validUrl(str!)
-                var view = UIImageView(frame: CGRect(x:50, y:160, width:200, height:25))
+                var view = UIImageView(frame: CGRect(x:50, y:160, width:70, height:70))
                 view.image = image
+                view.layer.cornerRadius = view.frame.height/2
+                view.layer.borderWidth = 1.0
+                view.layer.masksToBounds = false
+                view.layer.borderColor = UIColor.whiteColor().CGColor
+                view.clipsToBounds = true
+                    
+    
                 print("adding opp image", view, str)
                 cell.addSubview(view)
                 

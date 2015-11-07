@@ -130,8 +130,13 @@ class RoomViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let profile = validUrl(self.currentSource)
         let imageView = UIImageView(frame: CGRect(x:70, y:65, width:70, height:70))
         imageView.image = profile
-        imageView.layer.borderColor = UIColor.blackColor().CGColor
-        imageView.layer.cornerRadius = imageView.frame.height/2
+    
+    imageView.layer.cornerRadius = imageView.frame.height/2
+    imageView.layer.borderWidth = 1.0
+    imageView.layer.masksToBounds = false
+    imageView.layer.borderColor = UIColor.whiteColor().CGColor
+    imageView.clipsToBounds = true
+    
     if String(self.ids[indexPath.row]) == self.avatarID {
         cell.addSubview(imageView)
 ////    
@@ -148,6 +153,14 @@ class RoomViewController: UIViewController, UITableViewDataSource, UITableViewDe
         var image = validUrl(self.imageData)
         var view = UIImageView(frame: CGRect(x:70, y:65, width:70, height:70))
         view.image = image
+        
+        view.layer.cornerRadius = view.frame.height/2
+        view.layer.borderWidth = 1.0
+        view.layer.masksToBounds = false
+        view.layer.borderColor = UIColor.whiteColor().CGColor
+        view.clipsToBounds = true
+        
+
         cell.addSubview(view)
         
     }
