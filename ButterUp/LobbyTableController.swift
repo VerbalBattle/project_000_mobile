@@ -180,6 +180,13 @@ class LobbyTableController: UITableViewController {
                 var enemyLabel = UILabel(frame: CGRect(x:50, y:140, width:200, height:25))
                 enemyLabel.text = "In a room with:" + roomWith
                 var str =  subJson["opponentImage"].string
+                var turn = subJson["canTakeTurn"].bool
+                
+                    if turn == true {
+                        var turnLabel = UILabel(frame: CGRect(x:50, y:170, width:200, height:25))
+                        turnLabel.text = "Its your turn to write"
+                        cell.addSubview(turnLabel)
+                    }
                   
                 var image =  validUrl(str!)
                 var view = UIImageView(frame: CGRect(x:50, y:160, width:200, height:25))
